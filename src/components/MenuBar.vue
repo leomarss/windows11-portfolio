@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <div class="menu-bar-container">
+  <div class="menu-bar-container relative">
     <div class="menu-bar h-full flex relative">
       <!-- Central icons -->
       <div class="central-icons h-full flex gap-0.5 mx-auto">
@@ -78,6 +78,7 @@ export default {
   border-top: 1px solid #3f3f3f;
   background-color: #212121;
   padding: 5px;
+  z-index: 100;
 
   .menu-bar {
     .central-icons {

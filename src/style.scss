@@ -4,6 +4,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap");
 
+* {
+  user-select: none;
+}
+
 body {
   font-family: "Noto Sans", sans-serif;
   color: white;
