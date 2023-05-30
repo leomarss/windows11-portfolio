@@ -1,16 +1,28 @@
 <script>
-// import MyComponent from "./components/MyComponent.vue";
-
 export default {
   data() {
     return {
-      title: "Hello world",
+      currentTime: "",
+      currentDate: "",
     };
   },
+  mounted() {
+    this.updateDateTime();
+    setInterval(this.updateDateTime, 1000);
+  },
+  methods: {
+    updateDateTime() {
+      const currentDate = new Date();
+      const hours = String(currentDate.getHours()).padStart(2, "0");
+      const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+      const day = String(currentDate.getDate()).padStart(2, "0");
+      const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+      const year = String(currentDate.getFullYear());
 
-  // components: {
-  //   MyComponent,
-  // },
+      this.currentTime = `${hours}:${minutes}`;
+      this.currentDate = `${day}/${month}/${year}`;
+    },
+  },
 };
 </script>
 
@@ -50,8 +62,8 @@ export default {
           </svg>
         </button>
         <button class="date selected-item h-full flex flex-col justify-center text-right">
-          <p class="w-full">00:00</p>
-          <p class="w-full">20/10/2023</p>
+          <p class="w-full">{{ currentTime }}</p>
+          <p class="w-full">{{ currentDate }}</p>
         </button>
       </div>
     </div>
