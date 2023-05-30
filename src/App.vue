@@ -56,6 +56,7 @@ export default {
     cursor: pointer;
     width: 80px;
     padding: 0 5px;
+    transition: 0.1s;
 
     &:hover {
       background-color: #2e2e2e;
