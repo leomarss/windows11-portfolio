@@ -15,7 +15,20 @@ export default {
 </script>
 
 <template>
-  <h1>{{ title }}</h1>
+  <div class="desktop"></div>
+  <div class="menu-bar">content</div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+$menu-bar-h: 50px;
+
+.desktop {
+  height: calc(100vh - $menu-bar-h);
+}
+
+.menu-bar {
+  height: $menu-bar-h;
+  border-top: 1px solid #3f3f3f;
+  background-color: #212121;
+}
+</style>
