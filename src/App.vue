@@ -39,25 +39,52 @@ export default {
         this.isSelecting = false;
         this.selectionBox.endX = event.clientX;
         this.selectionBox.endY = event.clientY;
-        // Qui puoi fare qualcosa con la selezione, ad esempio inviarla al server o elaborarla localmente
+        this.updateSelectedItems();
       }
     },
     handleMouseMove(event) {
       if (this.isSelecting) {
         this.updateSelection(event);
+        this.updateSelectedItems();
       }
     },
     handleMouseMoveOutside(event) {
       if (this.isSelecting && (event.buttons === 1 || event.buttons === undefined)) {
-        const element = document.elementFromPoint(event.clientX, event.clientY);
-        if (!element || !element.closest(".menu-bar-container")) {
-          this.updateSelection(event);
-        }
+        this.updateSelection(event);
+        this.updateSelectedItems();
       }
     },
     updateSelection(event) {
       this.selectionBox.endX = event.clientX;
       this.selectionBox.endY = event.clientY;
+    },
+    updateSelectedItems() {
+      const items = document.getElementsByClassName("item");
+      const selectionRect = this.getSelectionRect();
+
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        const itemRect = item.getBoundingClientRect();
+
+        if (this.isRectIntersecting(itemRect, selectionRect)) {
+          item.classList.add("item-selected");
+        } else {
+          item.classList.remove("item-selected");
+        }
+      }
+    },
+    getSelectionRect() {
+      const { startX, startY, endX, endY } = this.selectionBox;
+
+      const left = Math.min(startX, endX);
+      const top = Math.min(startY, endY);
+      const width = Math.abs(endX - startX);
+      const height = Math.abs(endY - startY);
+
+      return { left, top, width, height };
+    },
+    isRectIntersecting(rect1, rect2) {
+      return rect1.left < rect2.left + rect2.width && rect1.left + rect1.width > rect2.left && rect1.top < rect2.top + rect2.height && rect1.top + rect1.height > rect2.top;
     },
   },
 
