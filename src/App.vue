@@ -1,5 +1,6 @@
 <script>
 import MenuBar from "./components/MenuBar.vue";
+import Desktop from "./components/Desktop.vue";
 
 export default {
   data() {
@@ -16,6 +17,7 @@ export default {
 
   components: {
     MenuBar,
+    Desktop,
   },
 
   mounted() {
@@ -104,30 +106,12 @@ export default {
 
 <template>
   <div @mousedown="startSelection" @mouseup="endSelection" @mousemove="updateSelection">
-    <div class="desktop flex flex-col relative">
-      <div class="mouse-selection fixed" v-if="isSelecting" :style="selectionBoxStyle"></div>
-      <div class="item-list flex items-start gap-2 h-full">
-        <div class="item flex flex-col items-center">
-          <img src="/images/desktop/notes.png" />
-          <p>About me</p>
-        </div>
-        <div class="item flex flex-col items-center">
-          <img src="/images/desktop/folder.png" />
-          <p>Projects</p>
-        </div>
-        <div class="item flex flex-col items-center">
-          <img src="/images/desktop/folder.png" />
-          <p>Technologies</p>
-        </div>
-      </div>
-      <div class="item-list">
-        <!-- Recycle bin -->
-        <div class="item flex flex-col items-center">
-          <img src="/images/desktop/trash.png" />
-          <p>Recycle Bin</p>
-        </div>
-      </div>
-    </div>
+    <!-- Mouse selector -->
+    <div class="mouse-selection fixed" v-if="isSelecting" :style="selectionBoxStyle"></div>
+
+    <!-- Desktop -->
+    <Desktop />
+
     <MenuBar />
   </div>
 </template>
@@ -141,38 +125,5 @@ export default {
   border: 1px solid #4af;
   background: rgba(68, 170, 255, 0.5);
   z-index: 1;
-}
-
-.desktop {
-  background-image: url("/images/wallpaper-waves.jpg");
-  background-size: cover;
-  background-position: center;
-
-  height: calc(100vh - $menu-bar-h);
-  padding: 8px;
-
-  .item {
-    cursor: pointer;
-    width: 80px;
-    padding: 0 5px;
-    transition: 0.1s;
-
-    &:hover {
-      background-color: #2e2e2e;
-      border-radius: 5px;
-    }
-
-    img {
-      width: 40px;
-    }
-    p {
-      font-size: 0.7rem;
-    }
-  }
-}
-
-.item-selected {
-  background-color: #2e2e2e;
-  border-radius: 5px;
 }
 </style>
