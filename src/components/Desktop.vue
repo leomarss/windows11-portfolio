@@ -1,7 +1,11 @@
 <script>
+import { store } from "../store/store";
+
 export default {
   data() {
-    return {};
+    return {
+      store,
+    };
   },
 };
 </script>
@@ -9,7 +13,7 @@ export default {
 <template>
   <div class="desktop flex flex-col relative">
     <div class="item-list flex items-start gap-2 h-full">
-      <div class="item flex flex-col items-center">
+      <div class="item flex flex-col items-center" @click="store.isNotepadOpen = true">
         <img src="/images/desktop/notes.png" />
         <p>About me</p>
       </div>
@@ -44,6 +48,7 @@ export default {
   padding: 8px;
 
   .item {
+    z-index: 1;
     cursor: pointer;
     width: 80px;
     padding: 0 5px;

@@ -1,4 +1,6 @@
 <script>
+import { store } from "./store/store";
+
 import MenuBar from "./components/MenuBar.vue";
 import Desktop from "./components/Desktop.vue";
 import Notepad from "./components/Notepad.vue";
@@ -6,6 +8,8 @@ import Notepad from "./components/Notepad.vue";
 export default {
   data() {
     return {
+      store,
+
       isSelecting: false,
       selectionBox: {
         startX: 0,
@@ -111,7 +115,7 @@ export default {
     <!-- Mouse selector -->
     <div class="mouse-selection fixed" v-if="isSelecting" :style="selectionBoxStyle"></div>
 
-    <Notepad />
+    <Notepad v-if="store.isNotepadOpen" />
 
     <!-- Desktop -->
     <Desktop />
