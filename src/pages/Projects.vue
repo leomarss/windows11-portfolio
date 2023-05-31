@@ -125,6 +125,43 @@ export default {
         </div>
       </div>
 
+      <div class="window-search flex items-center">
+        <div class="window-arrows flex items-center">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="color: white"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path>
+            </g>
+          </svg>
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+        </div>
+
+        <div class="window-folder flex grow">
+          <div class="window-left flex items-center">
+            <img src="/images/desktop/folder.png" />
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="0.7rem" width="0.7rem" xmlns="http://www.w3.org/2000/svg"><path d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"></path></svg>
+            <span>Projects</span>
+          </div>
+          <div class="window-right ml-auto flex items-center">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path>
+              </g>
+            </svg>
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg"><path d="M256 388c-72.597 0-132-59.405-132-132 0-72.601 59.403-132 132-132 36.3 0 69.299 15.4 92.406 39.601L278 234h154V80l-51.698 51.702C348.406 99.798 304.406 80 256 80c-96.797 0-176 79.203-176 176s78.094 176 176 176c81.045 0 148.287-54.134 169.401-128H378.85c-18.745 49.561-67.138 84-122.85 84z"></path></svg>
+          </div>
+        </div>
+
+        <div class="window-input h-full flex items-center grow">
+          <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M15.25 0a8.25 8.25 0 0 0-6.18 13.72L1 22.88l1.12 1 8.05-9.12A8.251 8.251 0 1 0 15.25.01V0zm0 15a6.75 6.75 0 1 1 0-13.5 6.75 6.75 0 0 1 0 13.5z"></path></svg>
+
+          <input type="text" placeholder="Search: Projects" />
+        </div>
+      </div>
+
       <div class="project flex flex-grow flex-col"></div>
     </div>
   </div>
@@ -229,6 +266,58 @@ export default {
       &:hover {
         background-color: #2e2e2e;
       }
+    }
+  }
+
+  .window-search {
+    padding: 10px 0;
+    .window-arrows {
+      padding: 0 10px;
+      gap: 8px;
+      & > svg:not(:first-child) {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .window-folder {
+    flex-basis: 300px;
+    font-size: 0.7rem;
+    border: 1px solid #85858585;
+
+    .window-left {
+      padding: 5px;
+      & > img {
+        height: 16.5px;
+      }
+      & > span {
+        margin-left: 5px;
+      }
+    }
+
+    .window-right {
+      gap: 20px;
+      padding-right: 10px;
+    }
+  }
+
+  .window-input {
+    margin: 0 10px;
+    padding: 0 5px;
+    border: 1px solid #85858585;
+    gap: 10px;
+    input {
+      color: gray;
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      font-size: 0.7rem;
+    }
+    ::placeholder {
+      color: gray;
     }
   }
 }
