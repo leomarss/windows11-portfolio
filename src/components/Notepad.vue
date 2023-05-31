@@ -10,7 +10,7 @@ export default {
 
 <template>
   <div class="notepad-container absolute w-full flex justify-center items-center">
-    <div class="notepad-content relative">
+    <div class="notepad-content relative flex flex-col">
       <div class="window-info flex justify-between">
         <div class="window-name h-full flex items-center">
           <img src="/images/notepad/notepad.png" />
@@ -39,6 +39,23 @@ export default {
         <button>
           <span>View</span>
         </button>
+      </div>
+
+      <div class="notepad flex flex-grow flex-col">
+        <!-- Text Area -->
+        <textarea class="h-full" name="" id=""></textarea>
+
+        <div class="notepad-footer mt-auto flex justify-between">
+          <div class="notepad-lines">
+            <span>Ln 1, Col 1</span>
+          </div>
+
+          <div class="notepad-info flex">
+            <span>100%</span>
+            <span>Windows (CRLF)</span>
+            <span>UTF-8</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -105,6 +122,23 @@ export default {
       padding: 10px;
       &:hover {
         background-color: #2e2e2e;
+      }
+    }
+  }
+
+  .notepad-footer {
+    background-color: #202020;
+    color: gray;
+    font-size: 0.8rem;
+    padding: 5px 0;
+    .notepad-lines {
+      padding: 0 10px;
+    }
+    .notepad-info {
+      gap: 15px;
+      & > span {
+        padding: 0 10px;
+        border-left: 1px solid gray;
       }
     }
   }
