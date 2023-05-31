@@ -43,7 +43,17 @@ export default {
 
       <div class="notepad flex flex-grow flex-col">
         <!-- Text Area -->
-        <textarea class="notepad-text h-full" name="" id=""></textarea>
+        <textarea class="notepad-text h-full" spellcheck="false">
+Hello, my name is Leonardo! 👋
+
+I'm 20 years old and I'm from Rome, Italy.
+I have been passionate about the world of technology and programming for years.
+Feel free to check out all my links by clicking the "Links" folder! 👀
+
+This website was created using VueJS and other frameworks :D
+
+Source code available: https://github.com/LeonardoMartignoni/windows11-portfolio</textarea
+        >
 
         <div class="notepad-footer mt-auto flex justify-between">
           <div class="notepad-lines">
