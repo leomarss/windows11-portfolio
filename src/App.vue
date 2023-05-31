@@ -1,6 +1,7 @@
 <script>
 import MenuBar from "./components/MenuBar.vue";
 import Desktop from "./components/Desktop.vue";
+import Notepad from "./components/Notepad.vue";
 
 export default {
   data() {
@@ -18,6 +19,7 @@ export default {
   components: {
     MenuBar,
     Desktop,
+    Notepad,
   },
 
   mounted() {
@@ -108,6 +110,8 @@ export default {
   <div @mousedown="startSelection" @mouseup="endSelection" @mousemove="updateSelection">
     <!-- Mouse selector -->
     <div class="mouse-selection fixed" v-if="isSelecting" :style="selectionBoxStyle"></div>
+
+    <Notepad />
 
     <!-- Desktop -->
     <Desktop />
