@@ -29,6 +29,17 @@ export default {
           </button>
         </div>
       </div>
+      <div class="window-edit">
+        <button>
+          <span>File</span>
+        </button>
+        <button>
+          <span>Edit</span>
+        </button>
+        <button>
+          <span>View</span>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -82,6 +93,18 @@ export default {
         &:hover {
           background-color: red;
         }
+      }
+    }
+  }
+
+  .window-edit {
+    font-size: 0.9rem;
+    font-weight: 300;
+    background-color: #202020;
+    & > button {
+      padding: 10px;
+      &:hover {
+        background-color: #2e2e2e;
       }
     }
   }
