@@ -43,7 +43,7 @@ export default {
 
       <div class="notepad flex flex-grow flex-col">
         <!-- Text Area -->
-        <textarea class="h-full" name="" id=""></textarea>
+        <textarea class="notepad-text h-full" name="" id=""></textarea>
 
         <div class="notepad-footer mt-auto flex justify-between">
           <div class="notepad-lines">
@@ -126,10 +126,19 @@ export default {
     }
   }
 
+  .notepad {
+    font-size: 0.8rem;
+    .notepad-text {
+      padding: 10px;
+      resize: none;
+      outline: none;
+      background-color: transparent;
+    }
+  }
+
   .notepad-footer {
     background-color: #202020;
     color: gray;
-    font-size: 0.8rem;
     padding: 5px 0;
     .notepad-lines {
       padding: 0 10px;
