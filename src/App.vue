@@ -3,7 +3,6 @@ import { store } from "./store/store";
 
 import MenuBar from "./components/MenuBar.vue";
 import Desktop from "./components/Desktop.vue";
-import Notepad from "./components/Notepad.vue";
 
 export default {
   data() {
@@ -23,7 +22,6 @@ export default {
   components: {
     MenuBar,
     Desktop,
-    Notepad,
   },
 
   mounted() {
@@ -115,7 +113,7 @@ export default {
     <!-- Mouse selector -->
     <div class="mouse-selection fixed" v-if="isSelecting" :style="selectionBoxStyle"></div>
 
-    <Notepad v-if="store.isNotepadOpen" />
+    <router-view></router-view>
 
     <!-- Desktop -->
     <Desktop />
