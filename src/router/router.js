@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "../pages/Home.vue";
 import Notepad from "../pages/Notepad.vue";
+import Projects from "../pages/Projects.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -21,6 +22,14 @@ const router = createRouter({
       component: Notepad,
       meta: {
         title: "leondvro | About me",
+      },
+    },
+    {
+      path: "/projects",
+      name: "projects",
+      component: Projects,
+      meta: {
+        title: "leondvro | Projects",
       },
     },
   ],

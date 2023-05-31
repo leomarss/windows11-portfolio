@@ -13,14 +13,14 @@ export default {
 <template>
   <div class="desktop flex flex-col relative">
     <div class="item-list flex items-start gap-2 h-full">
-      <router-link :to="{ name: 'about-me' }" class="item relative flex flex-col items-center" @click="store.isNotepadOpen = true">
+      <router-link :to="{ name: 'about-me' }" class="item relative flex flex-col items-center">
         <img src="/images/desktop/notes.png" />
         <p>About me</p>
       </router-link>
-      <div class="item flex flex-col items-center">
+      <router-link :to="{ name: 'projects' }" class="item flex flex-col items-center">
         <img src="/images/desktop/folder.png" />
         <p>Projects</p>
-      </div>
+      </router-link>
       <div class="item flex flex-col items-center">
         <img src="/images/desktop/folder.png" />
         <p>Technologies</p>
