@@ -130,6 +130,7 @@ export default {
   height: 500px;
   border: 1px solid #4af;
   background: rgba(68, 170, 255, 0.5);
-  z-index: 1;
+  z-index: 2;
+  pointer-events: none;
 }
 </style>
