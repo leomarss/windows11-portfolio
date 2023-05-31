@@ -162,7 +162,39 @@ export default {
         </div>
       </div>
 
-      <div class="project flex flex-grow flex-col"></div>
+      <div class="project flex flex-grow">
+        <div class="folder-search flex flex-col">
+          <div class="folder-file folder-opener flex items-center">
+            <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path>
+              </g>
+            </svg>
+            <img src="/images/folder/desktop.png" />
+            <span>Quick access</span>
+          </div>
+
+          <div class="quick-access-content flex flex-col">
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>Desktop</span>
+            </div>
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>Downloads</span>
+            </div>
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>Documents</span>
+            </div>
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>Pictures</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -318,6 +350,37 @@ export default {
     }
     ::placeholder {
       color: gray;
+    }
+  }
+}
+
+.project {
+  font-size: 0.7rem;
+
+  .folder-search {
+    gap: 4px;
+    flex-basis: 150px;
+    padding: 3px;
+    .folder-file:hover {
+      background-color: #2e2e2e;
+    }
+    .folder-opener {
+      cursor: pointer;
+      padding: 5px;
+      gap: 5px;
+    }
+
+    img {
+      height: 16px;
+    }
+
+    .quick-access-content {
+      gap: 5px;
+      .folder-file {
+        cursor: pointer;
+        padding: 5px 40px;
+        gap: 5px;
+      }
     }
   }
 }
