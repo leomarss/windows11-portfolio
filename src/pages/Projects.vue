@@ -163,7 +163,7 @@ export default {
       </div>
 
       <div class="project flex flex-grow">
-        <div class="folder-search flex flex-col">
+        <div class="folder-search flex flex-col flex-shrink-0">
           <div class="folder-file folder-opener flex items-center">
             <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg">
               <g>
@@ -232,6 +232,32 @@ export default {
             <div class="folder-file flex items-center">
               <img src="/images/folder/desktop.png" />
               <span>512GB SSD</span>
+            </div>
+          </div>
+        </div>
+        <div class="window-content w-full">
+          <div class="table w-full text-left">
+            <div class="table-header-group">
+              <div class="table-row">
+                <div class="table-cell w-5/12">Name</div>
+                <div class="table-cell w-3/12">Date modified</div>
+                <div class="table-cell w-3/12">Type</div>
+                <div class="table-cell">Size</div>
+              </div>
+            </div>
+            <div class="table-row-group">
+              <!-- Project row -->
+              <a href="#" target="_blank" class="table-row">
+                <div class="table-cell">
+                  <div class="file-name-col flex">
+                    <img class="file-type-icon" src="/images/folder/github.png" />
+                    <span>project-bello</span>
+                  </div>
+                </div>
+                <div class="table-cell">06/10/2022 22:41</div>
+                <div class="table-cell">Shortcut</div>
+                <div class="table-cell text-right">8 KB</div>
+              </a>
             </div>
           </div>
         </div>
@@ -429,6 +455,34 @@ export default {
         cursor: pointer;
         padding: 5px 40px;
         gap: 5px;
+      }
+    }
+  }
+
+  .window-content {
+    padding: 0 10px;
+    .table-header-group .table-cell {
+      padding: 5px;
+      border-right: 1px solid #32323285;
+      &:hover {
+        background-color: #2e2e2e;
+      }
+    }
+
+    .table-row-group .table-row:hover {
+      background-color: #2e2e2e;
+    }
+
+    .table-cell {
+      padding: 5px;
+      vertical-align: middle;
+    }
+
+    .table-cell .file-name-col {
+      gap: 5px;
+      .file-type-icon {
+        width: 1rem;
+        filter: invert(100%);
       }
     }
   }
