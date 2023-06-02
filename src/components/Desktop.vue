@@ -21,10 +21,10 @@ export default {
         <img src="/images/desktop/folder.png" />
         <p>Projects</p>
       </router-link>
-      <div class="item flex flex-col items-center">
+      <router-link :to="{ name: 'technologies' }" class="item flex flex-col items-center">
         <img src="/images/desktop/folder.png" />
         <p>Technologies</p>
-      </div>
+      </router-link>
       <div class="item flex flex-col items-center">
         <img src="/images/desktop/links.png" />
         <p>Links</p>
