@@ -25,10 +25,10 @@ export default {
         <img src="/images/desktop/folder.png" />
         <p>Technologies</p>
       </router-link>
-      <div class="item flex flex-col items-center">
+      <router-link :to="{ name: 'links' }" class="item flex flex-col items-center">
         <img src="/images/desktop/links.png" />
         <p>Links</p>
-      </div>
+      </router-link>
     </div>
     <div class="item-list">
       <!-- Recycle bin -->
