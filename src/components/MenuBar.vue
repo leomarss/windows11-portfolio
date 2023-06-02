@@ -84,6 +84,7 @@ export default {
     .central-icons {
       & > button {
         padding: 8px;
+        aspect-ratio: 1;
       }
     }
 
