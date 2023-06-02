@@ -13,8 +13,8 @@ export default {
 <template>
   <div class="project-container absolute w-full flex justify-center items-center">
     <div class="project-content relative flex flex-col">
-      <div class="window-info flex items-center justify-between">
-        <div class="window-name h-full flex items-center">
+      <div class="window-info flex justify-between">
+        <div class="window-name h-full flex items-center self-center">
           <img src="/images/desktop/folder.png" />
           <span>Projects</span>
         </div>
