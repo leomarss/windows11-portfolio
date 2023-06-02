@@ -60,4 +60,36 @@ export const store = reactive({
       size: "3,8 MB",
     },
   ],
+
+  technologies: [
+    // HTML, CSS, Javascript, PHP, MySQL, Vue.js, Laravel
+    {
+      name: "HTML",
+      icon: "/images/technologies/html.png",
+    },
+    {
+      name: "CSS",
+      icon: "/images/technologies/css.png",
+    },
+    {
+      name: "Javascript",
+      icon: "/images/technologies/js.png",
+    },
+    {
+      name: "PHP",
+      icon: "/images/technologies/php.png",
+    },
+    {
+      name: "MySQL",
+      icon: "/images/technologies/mysql.png",
+    },
+    {
+      name: "Vue.js",
+      icon: "/images/technologies/vue.png",
+    },
+    {
+      name: "Laravel",
+      icon: "/images/technologies/laravel.png",
+    },
+  ],
 });

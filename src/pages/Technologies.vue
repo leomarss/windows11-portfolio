@@ -5,7 +5,33 @@ export default {
   data() {
     return {
       store,
+
+      currentDatetime: "",
     };
+  },
+
+  mounted() {
+    this.formattedDateTime();
+    setInterval(this.formattedDateTime, 1000);
+  },
+
+  methods: {
+    formattedDateTime() {
+      const currentDate = new Date();
+      const day = currentDate.getDate();
+      const month = currentDate.getMonth() + 1;
+      const year = currentDate.getFullYear();
+      const hours = currentDate.getHours();
+      const minutes = currentDate.getMinutes();
+
+      // Aggiungi zeri iniziali se necessario
+      const formattedDay = day < 10 ? `0${day}` : day;
+      const formattedMonth = month < 10 ? `0${month}` : month;
+      const formattedHours = hours < 10 ? `0${hours}` : hours;
+      const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
+      this.currentDatetime = `${formattedDay}/${formattedMonth}/${year} ${formattedHours}:${formattedMinutes}`;
+    },
   },
 };
 </script>
@@ -243,25 +269,25 @@ export default {
           <div class="table w-full text-left">
             <div class="table-header-group">
               <div class="table-row">
-                <div class="table-cell w-5/12">Name</div>
-                <div class="table-cell w-3/12">Date modified</div>
-                <div class="table-cell w-3/12">Type</div>
-                <div class="table-cell">Size</div>
+                <div class="table-cell w-[40%]">Name</div>
+                <div class="table-cell w-[25%]">Date modified</div>
+                <div class="table-cell w-[20%]">Type</div>
+                <div class="table-cell w-[15%]">Size</div>
               </div>
             </div>
             <div class="table-row-group">
               <!-- Project row -->
-              <a href="#" target="_blank" class="table-row">
+              <div v-for="technology in store.technologies" class="table-row cursor-pointer">
                 <div class="table-cell">
                   <div class="file-name-col flex">
-                    <img class="file-type-icon" src="/images/folder/github.png" />
-                    <span>project-bello</span>
+                    <img class="file-type-icon" :src="technology.icon" />
+                    <span>{{ technology.name }}</span>
                   </div>
                 </div>
-                <div class="table-cell">06/10/2022 22:41</div>
+                <div class="table-cell">{{ currentDatetime }}</div>
                 <div class="table-cell">Shortcut</div>
-                <div class="table-cell text-right">8 KB</div>
-              </a>
+                <div class="table-cell text-right">0 KB</div>
+              </div>
             </div>
           </div>
         </div>
@@ -487,7 +513,6 @@ export default {
       gap: 5px;
       .file-type-icon {
         width: 1rem;
-        filter: invert(100%);
       }
     }
   }
