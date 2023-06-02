@@ -52,7 +52,7 @@ I'm 20 years old and I'm from Rome, Italy.
 I have been passionate about the world of technology and programming for years.
 Feel free to check out all my links by clicking the "Links" folder! 👀
 
-This website was created using VueJS and other frameworks :D
+This website was created using Vue.js and other frameworks :D
 
 Source code available: https://github.com/LeonardoMartignoni/windows11-portfolio</textarea
         >
