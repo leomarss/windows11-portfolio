@@ -193,6 +193,47 @@ export default {
               <span>Pictures</span>
             </div>
           </div>
+          <div class="folder-file folder-opener flex items-center">
+            <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path>
+              </g>
+            </svg>
+            <img src="/images/folder/desktop.png" />
+            <span>Quick access</span>
+          </div>
+
+          <div class="quick-access-content flex flex-col">
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>Desktop</span>
+            </div>
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>Downloads</span>
+            </div>
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>Documents</span>
+            </div>
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>Pictures</span>
+            </div>
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>Videos</span>
+            </div>
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>Music</span>
+            </div>
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/desktop.png" />
+              <span>512GB SSD</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -207,6 +248,7 @@ export default {
 }
 
 .project-content {
+  overflow: hidden;
   width: 850px;
   height: 500px;
   background-color: #191919;
@@ -216,7 +258,8 @@ export default {
 
   .window-info {
     padding-left: 5px;
-    height: 2rem;
+    min-height: 2rem;
+    max-height: 2rem;
     background-color: #202020;
 
     .window-name {
@@ -355,14 +398,20 @@ export default {
 }
 
 .project {
+  overflow: hidden;
   font-size: 0.7rem;
 
   .folder-search {
+    overflow: auto;
     gap: 4px;
     flex-basis: 150px;
     padding: 3px;
-    .folder-file:hover {
-      background-color: #2e2e2e;
+    border-right: 2px solid #32323285;
+    .folder-file {
+      border-radius: 2px;
+      &:hover {
+        background-color: #2e2e2e;
+      }
     }
     .folder-opener {
       cursor: pointer;
