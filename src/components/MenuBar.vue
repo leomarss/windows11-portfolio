@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <div class="menu-bar-container relative">
+  <div class="menu-bar-container fixed w-full">
     <div class="menu-bar h-full flex relative">
       <!-- Central icons -->
       <div class="central-icons h-full flex gap-0.5 mx-auto">

@@ -26,13 +26,6 @@ export default {
 
   mounted() {
     window.addEventListener("mousemove", this.handleMouseMoveOutside);
-
-    const setHeight = function () {
-      const currentHeight = window.innerHeight;
-      document.body.style.height = `${currentHeight}px`;
-    };
-    window.addEventListener("resize", setHeight);
-    setHeight();
   },
 
   beforeDestroy() {
