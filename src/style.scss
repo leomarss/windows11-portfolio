@@ -8,6 +8,10 @@
   user-select: none;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   font-family: "Noto Sans", sans-serif;
   color: white;

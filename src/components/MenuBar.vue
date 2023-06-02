@@ -32,16 +32,16 @@ export default {
       <!-- Central icons -->
       <div class="central-icons h-full flex gap-0.5 mx-auto">
         <button class="selected-item">
-          <img class="max-w-full max-h-full" src="/images/menu-bar/windows.png" />
+          <img class="w-full h-full" src="/images/menu-bar/windows.png" />
         </button>
         <button class="selected-item">
-          <img class="max-w-full max-h-full" src="/images/menu-bar/explorer.png" />
+          <img class="w-full h-full" src="/images/menu-bar/explorer.png" />
         </button>
         <button class="selected-item">
-          <img class="max-w-full max-h-full" src="/images/menu-bar/vscode.png" />
+          <img class="w-full h-full" src="/images/menu-bar/vscode.png" />
         </button>
         <button class="selected-item">
-          <img class="max-w-full max-h-full" src="/images/menu-bar/terminal.png" />
+          <img class="w-full h-full" src="/images/menu-bar/terminal.png" />
         </button>
       </div>
 
