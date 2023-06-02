@@ -171,7 +171,7 @@ export default {
                 <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path>
               </g>
             </svg>
-            <img src="/images/folder/desktop.png" />
+            <img src="/images/folder/quick-access.png" />
             <span>Quick access</span>
           </div>
 
@@ -181,15 +181,15 @@ export default {
               <span>Desktop</span>
             </div>
             <div class="folder-file flex items-center">
-              <img src="/images/folder/desktop.png" />
+              <img src="/images/folder/downloads.png" />
               <span>Downloads</span>
             </div>
             <div class="folder-file flex items-center">
-              <img src="/images/folder/desktop.png" />
+              <img src="/images/folder/documents.png" />
               <span>Documents</span>
             </div>
             <div class="folder-file flex items-center">
-              <img src="/images/folder/desktop.png" />
+              <img src="/images/folder/pictures.png" />
               <span>Pictures</span>
             </div>
           </div>
@@ -200,8 +200,8 @@ export default {
                 <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path>
               </g>
             </svg>
-            <img src="/images/folder/desktop.png" />
-            <span>Quick access</span>
+            <img src="/images/folder/this-pc.png" />
+            <span>This PC</span>
           </div>
 
           <div class="quick-access-content flex flex-col">
@@ -210,28 +210,32 @@ export default {
               <span>Desktop</span>
             </div>
             <div class="folder-file flex items-center">
-              <img src="/images/folder/desktop.png" />
+              <img src="/images/folder/downloads.png" />
               <span>Downloads</span>
             </div>
             <div class="folder-file flex items-center">
-              <img src="/images/folder/desktop.png" />
+              <img src="/images/folder/documents.png" />
               <span>Documents</span>
             </div>
             <div class="folder-file flex items-center">
-              <img src="/images/folder/desktop.png" />
+              <img src="/images/folder/pictures.png" />
               <span>Pictures</span>
             </div>
             <div class="folder-file flex items-center">
-              <img src="/images/folder/desktop.png" />
+              <img src="/images/folder/videos.png" />
               <span>Videos</span>
             </div>
             <div class="folder-file flex items-center">
-              <img src="/images/folder/desktop.png" />
+              <img src="/images/folder/music.png" />
               <span>Music</span>
             </div>
             <div class="folder-file flex items-center">
-              <img src="/images/folder/desktop.png" />
-              <span>512GB SSD</span>
+              <img src="/images/folder/primary-disk.png" />
+              <span>256GB SSD</span>
+            </div>
+            <div class="folder-file flex items-center">
+              <img src="/images/folder/secondary-disk.png" />
+              <span>4TB HDD</span>
             </div>
           </div>
         </div>
@@ -276,7 +280,8 @@ export default {
 .project-content {
   overflow: hidden;
   width: 850px;
-  height: 500px;
+  min-height: auto;
+  max-height: 600px;
   background-color: #191919;
   border: 1px solid #323232;
   border-radius: 10px;
@@ -430,7 +435,7 @@ export default {
   .folder-search {
     overflow: auto;
     gap: 4px;
-    flex-basis: 150px;
+    flex-basis: 170px;
     padding: 3px;
     border-right: 2px solid #32323285;
     .folder-file {
