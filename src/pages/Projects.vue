@@ -243,24 +243,24 @@ export default {
           <div class="table w-full text-left">
             <div class="table-header-group">
               <div class="table-row">
-                <div class="table-cell w-5/12">Name</div>
-                <div class="table-cell w-3/12">Date modified</div>
-                <div class="table-cell w-3/12">Type</div>
-                <div class="table-cell">Size</div>
+                <div class="table-cell w-[40%]">Name</div>
+                <div class="table-cell w-[25%]">Date modified</div>
+                <div class="table-cell w-[20%]">Type</div>
+                <div class="table-cell w-[15%]">Size</div>
               </div>
             </div>
             <div class="table-row-group">
               <!-- Project row -->
-              <a href="#" target="_blank" class="table-row">
+              <a v-for="project in store.projects" :href="project.link" target="_blank" class="table-row">
                 <div class="table-cell">
                   <div class="file-name-col flex">
                     <img class="file-type-icon" src="/images/folder/github.png" />
-                    <span>project-bello</span>
+                    <span>{{ project.name }}</span>
                   </div>
                 </div>
-                <div class="table-cell">06/10/2022 22:41</div>
+                <div class="table-cell">{{ project.dateModified }}</div>
                 <div class="table-cell">Shortcut</div>
-                <div class="table-cell text-right">8 KB</div>
+                <div class="table-cell text-right">{{ project.size }}</div>
               </a>
             </div>
           </div>
