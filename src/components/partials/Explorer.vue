@@ -52,8 +52,8 @@ export default {
 <template>
   <div class="project-container absolute w-full flex justify-center items-center">
     <div class="project-content relative flex flex-col" :style="{ left: projectContentX + 'px', top: projectContentY + 'px' }">
-      <div class="window-info flex justify-between" @mousedown="handleMouseDown">
-        <div class="window-name h-full flex items-center self-center">
+      <div class="window-info flex">
+        <div class="window-name flex items-center flex-grow" @mousedown="handleMouseDown">
           <img src="/images/desktop/folder.png" />
           <span>{{ windowName }}</span>
         </div>
