@@ -62,7 +62,6 @@ export const store = reactive({
   ],
 
   technologies: [
-    // HTML, CSS, Javascript, PHP, MySQL, Vue.js, Laravel
     {
       name: "HTML",
       icon: "/images/technologies/html.png",
@@ -90,6 +89,29 @@ export const store = reactive({
     {
       name: "Laravel",
       icon: "/images/technologies/laravel.png",
+    },
+  ],
+
+  links: [
+    {
+      name: "Linkedin",
+      icon: "/images/links/linkedin.png",
+      href: "https://www.linkedin.com/in/leonardo-martignoni/",
+    },
+    {
+      name: "Github",
+      icon: "/images/links/github.png",
+      href: "https://github.com/LeonardoMartignoni",
+    },
+    {
+      name: "Email",
+      icon: "/images/links/email.png",
+      href: "mailto:leonardo.martignonii@gmail.com",
+    },
+    {
+      name: "Resume (Curriculum Vitae)",
+      icon: "/images/links/cv.png",
+      href: "#",
     },
   ],
 });
