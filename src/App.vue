@@ -34,14 +34,14 @@ export default {
 
   methods: {
     startSelection(event) {
-      if (event.button === 0) {
+      if (!this.store.isDragging && event.button === 0) {
         this.isSelecting = true;
         this.selectionBox.startX = event.clientX;
         this.selectionBox.startY = event.clientY;
       }
     },
     endSelection(event) {
-      if (event.button === 0) {
+      if (!this.store.isDragging && event.button === 0) {
         this.isSelecting = false;
         this.selectionBox.endX = event.clientX;
         this.selectionBox.endY = event.clientY;
@@ -49,13 +49,13 @@ export default {
       }
     },
     handleMouseMove(event) {
-      if (this.isSelecting) {
+      if (this.isSelecting && !this.store.isDragging) {
         this.updateSelection(event);
         this.updateSelectedItems();
       }
     },
     handleMouseMoveOutside(event) {
-      if (this.isSelecting && (event.buttons === 1 || event.buttons === undefined)) {
+      if (this.isSelecting && !this.store.isDragging && (event.buttons === 1 || event.buttons === undefined)) {
         this.updateSelection(event);
         this.updateSelectedItems();
       }
@@ -91,6 +91,14 @@ export default {
     },
     isRectIntersecting(rect1, rect2) {
       return rect1.left < rect2.left + rect2.width && rect1.left + rect1.width > rect2.left && rect1.top < rect2.top + rect2.height && rect1.top + rect1.height > rect2.top;
+    },
+    // Aggiunto nuovo metodo per iniziare il trascinamento della finestra
+    startDragging(event) {
+      this.store.isDragging = true;
+    },
+    // Aggiunto nuovo metodo per terminare il trascinamento della finestra
+    endDragging(event) {
+      this.store.isDragging = false;
     },
   },
 

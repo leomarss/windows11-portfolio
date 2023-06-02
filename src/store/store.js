@@ -114,4 +114,6 @@ export const store = reactive({
       href: "#",
     },
   ],
+
+  isDragging: false,
 });
