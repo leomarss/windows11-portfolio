@@ -25,6 +25,10 @@ export default {
         <img src="/images/desktop/folder.png" />
         <p>Technologies</p>
       </div>
+      <div class="item flex flex-col items-center">
+        <img src="/images/desktop/links.png" />
+        <p>Links</p>
+      </div>
     </div>
     <div class="item-list">
       <!-- Recycle bin -->
