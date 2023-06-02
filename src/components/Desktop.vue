@@ -52,6 +52,7 @@ export default {
   height: calc(100svh - $menu-bar-h);
   max-height: -webkit-fill-available;
   padding: 8px;
+  overflow: hidden;
 
   .item {
     z-index: 1;
