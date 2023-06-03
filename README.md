@@ -1,7 +1,21 @@
-# Vue 3 + Vite
+<img src="https://i.imgur.com/WliUpFA.jpg">
+<hr>
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# About this
 
-## Recommended IDE Setup
+Windows 11 personal portfolio website built with Vue and Tailwind, deployed on Netlify.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Demo
+
+<!-- Todo -->
+
+View the live demo here: SITE_LINK
+
+## Learn more
+
+- <a href="https://vuejs.org/guide/introduction.html">Vue.js Documentation</a>
+- <a href="https://tailwindcss.com/docs/installation">Tailwind Documentation</a>
+
+## Deploy
+
+You can deploy this app on Netlify by following <a href="https://www.netlify.com/with/vue/">this guide</a>.
