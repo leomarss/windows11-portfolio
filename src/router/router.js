@@ -5,6 +5,7 @@ import Notepad from "../pages/Notepad.vue";
 import Projects from "../pages/Projects.vue";
 import Technologies from "../pages/Technologies.vue";
 import Links from "../pages/Links.vue";
+import Terminal from "../pages/Terminal.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -48,6 +49,14 @@ const router = createRouter({
       component: Links,
       meta: {
         title: "leonvrdo | Links",
+      },
+    },
+    {
+      path: "/terminal",
+      name: "terminal",
+      component: Terminal,
+      meta: {
+        title: "leonvrdo | Terminal",
       },
     },
   ],
