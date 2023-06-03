@@ -40,9 +40,9 @@ export default {
         <button class="selected-item">
           <img class="w-full h-full" src="/images/menu-bar/vscode.png" />
         </button>
-        <button class="selected-item">
+        <router-link :to="{ name: 'terminal' }" class="selected-item">
           <img class="w-full h-full" src="/images/menu-bar/terminal.png" />
-        </button>
+        </router-link>
       </div>
 
       <!-- Left menu -->
@@ -82,7 +82,7 @@ export default {
 
   .menu-bar {
     .central-icons {
-      & > button {
+      & > * {
         padding: 8px;
         aspect-ratio: 1;
       }
