@@ -5,7 +5,51 @@ export default {
   data() {
     return {
       store,
+
+      // Terminal history
+      terminal: [
+        {
+          inputMsg: "cd Desktop",
+          outputMsg: "bash: cd desktop: command not found",
+        },
+      ],
+
+      // Window drag
+      isMouseDown: false,
+      initialMouseX: 0,
+      initialMouseY: 0,
+      initialProjectContentX: 0,
+      initialProjectContentY: 0,
+      projectContentX: 0,
+      projectContentY: 0,
     };
+  },
+
+  methods: {
+    handleMouseDown(event) {
+      this.isMouseDown = true;
+      this.store.isDragging = true;
+      this.initialMouseX = event.clientX;
+      this.initialMouseY = event.clientY;
+      this.initialProjectContentX = this.projectContentX;
+      this.initialProjectContentY = this.projectContentY;
+      window.addEventListener("mousemove", this.handleMouseMove);
+      window.addEventListener("mouseup", this.handleMouseUp);
+    },
+    handleMouseMove(event) {
+      if (this.isMouseDown) {
+        const deltaX = event.clientX - this.initialMouseX;
+        const deltaY = event.clientY - this.initialMouseY;
+        this.projectContentX = this.initialProjectContentX + deltaX;
+        this.projectContentY = this.initialProjectContentY + deltaY;
+      }
+    },
+    handleMouseUp() {
+      this.isMouseDown = false;
+      this.store.isDragging = false;
+      window.removeEventListener("mousemove", this.handleMouseMove);
+      window.removeEventListener("mouseup", this.handleMouseUp);
+    },
   },
 };
 </script>
@@ -17,7 +61,7 @@ export default {
         <div class="window-name flex items-center flex-grow" @mousedown="handleMouseDown">
           <div class="terminal-name h-full flex items-center">
             <img src="/images/menu-bar/terminal.png" />
-            <span>MINGW64:/c/User/Leonardo</span>
+            <span>MINGW64:/c/User/leo</span>
             <span class="close-terminal">
               <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.116 8l-4.558 4.558.884.884L8 8.884l4.558 4.558.884-.884L8.884 8l4.558-4.558-.884-.884L8 7.116 3.442 2.558l-.884.884L7.116 8z"></path></svg>
             </span>
@@ -53,6 +97,18 @@ export default {
           </router-link>
         </div>
       </div>
+      <div class="terminal relative">
+        <div class="terminal-messages">
+          <div class="terminal-message relative">
+            <p class="terminal-command">leo@Leonardo <span class="purple-text">MINGW64</span> <span class="tilde">~</span></p>
+            <div class="user-input flex">
+              <span>$</span>
+              <input class="w-full" type="text" />
+            </div>
+          </div>
+        </div>
+        <div class="terminal-bg absolute top-0 left-0 w-full h-full"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -69,7 +125,6 @@ export default {
   width: 850px;
   min-height: auto;
   max-height: 600px;
-  background-color: #191919;
   border: 1px solid #323232;
   border-radius: 10px;
   z-index: 2;
@@ -137,6 +192,40 @@ export default {
           background-color: red;
         }
       }
+    }
+  }
+
+  .terminal {
+    position: relative;
+    height: 400px;
+    padding: 10px;
+    font-size: 0.9rem;
+
+    .terminal-message {
+      z-index: 1;
+      font-weight: 500;
+      .terminal-command {
+        color: #40c840;
+        .purple-text {
+          color: #c840ff;
+        }
+        .tilde {
+          color: #bebe00;
+        }
+      }
+
+      .user-input {
+        gap: 10px;
+        input {
+          outline: none;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .terminal-bg {
+      background-image: url("/images/terminal/noisebg.png");
+      opacity: 0.9;
     }
   }
 }
