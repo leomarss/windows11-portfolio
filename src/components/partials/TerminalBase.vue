@@ -17,6 +17,10 @@ export default {
     };
   },
 
+  props: {
+    currentUser: String,
+  },
+
   methods: {
     handleMouseDown(event) {
       this.isMouseDown = true;
@@ -53,7 +57,7 @@ export default {
         <div class="window-name flex items-center flex-grow" @mousedown="handleMouseDown">
           <div class="terminal-name h-full flex items-center">
             <img src="/images/menu-bar/terminal.png" />
-            <span>MINGW64:/c/User/leo</span>
+            <span>MINGW64:/c/User/{{ currentUser }}</span>
             <span class="close-terminal">
               <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.116 8l-4.558 4.558.884.884L8 8.884l4.558 4.558.884-.884L8.884 8l4.558-4.558-.884-.884L8 7.116 3.442 2.558l-.884.884L7.116 8z"></path></svg>
             </span>
@@ -90,7 +94,7 @@ export default {
         </div>
       </div>
       <div class="terminal relative">
-        <div class="terminal-messages">
+        <div class="terminal-messages h-full overflow-y-auto">
           <!-- Messages here -->
           <slot></slot>
         </div>
@@ -188,26 +192,9 @@ export default {
     padding: 10px;
     font-size: 0.9rem;
 
-    .terminal-message {
+    .terminal-messages {
+      position: relative;
       z-index: 1;
-      font-weight: 500;
-      .terminal-command {
-        color: #40c840;
-        .purple-text {
-          color: #c840ff;
-        }
-        .tilde {
-          color: #bebe00;
-        }
-      }
-
-      .user-input {
-        gap: 10px;
-        input {
-          outline: none;
-          background-color: transparent;
-        }
-      }
     }
 
     .terminal-bg {

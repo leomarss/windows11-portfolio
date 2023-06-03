@@ -6,15 +6,11 @@ export default {
   data() {
     return {
       store,
+      currentUser: "leo",
       userInput: "",
 
       // Terminal history
-      terminalHistory: [
-        {
-          inputMsg: "cd Desktop",
-          outputMsg: "bash: cd desktop: command not found",
-        },
-      ],
+      terminalHistory: [],
     };
   },
 
@@ -27,9 +23,33 @@ export default {
       const input = this.userInput;
       let output = "";
 
+      // Command 'help'
       if (input == "help") {
-        output = "help";
-      } else {
+        output = "help: Display this help message\r\nclear: Clear the terminal screen\necho: Displays text/string that are passed as an argument\nwhoami: Display the name of the current user";
+      }
+
+      // Command 'clear'
+      else if (input == "clear") {
+        this.terminalHistory = [];
+        this.userInput = "";
+        return;
+      }
+
+      // Command 'whoami'
+      else if (input == "whoami") {
+        output = this.currentUser;
+      }
+
+      // Empty input
+      else if (input == "") {
+        this.terminalHistory.push({
+          inputMsg: input,
+        });
+        return;
+      }
+
+      // Command not found
+      else {
         output = `bash: ${input}: command not found`;
       }
 
@@ -46,17 +66,17 @@ export default {
 </script>
 
 <template>
-  <TerminalBase>
+  <TerminalBase :currentUser="currentUser">
     <div v-for="history in terminalHistory" class="terminal-message relative">
-      <p class="terminal-command">leo@Leonardo <span class="purple-text">MINGW64</span> <span class="tilde">~</span></p>
+      <p class="terminal-command">{{ currentUser }}@Leonardo <span class="purple-text">MINGW64</span> <span class="tilde">~</span></p>
       <div class="user-input flex">
         <span>$</span>
         <span>{{ history.inputMsg }}</span>
       </div>
-      <span class="mb-4 block">{{ history.outputMsg }}</span>
+      <span class="mb-4 block whitespace-pre">{{ history.outputMsg }}</span>
     </div>
     <div class="terminal-message relative">
-      <p class="terminal-command">leo@Leonardo <span class="purple-text">MINGW64</span> <span class="tilde">~</span></p>
+      <p class="terminal-command">{{ currentUser }}@Leonardo <span class="purple-text">MINGW64</span> <span class="tilde">~</span></p>
       <div class="user-input flex">
         <span>$</span>
         <input v-model="userInput" class="w-full" type="text" spellcheck="false" @keyup.enter="sendInput()" />
