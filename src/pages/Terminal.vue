@@ -40,6 +40,11 @@ export default {
         output = this.currentUser;
       }
 
+      // Command 'echo'
+      else if (input.startsWith("echo")) {
+        output = input.replace("echo", "");
+      }
+
       // Empty input
       else if (input == "") {
         this.terminalHistory.push({
