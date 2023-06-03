@@ -42,7 +42,7 @@ export default {
 
       // Command 'echo'
       else if (input.startsWith("echo")) {
-        output = input.replace("echo", "");
+        output = input.replace("echo ", "");
       }
 
       // Empty input
