@@ -5,6 +5,7 @@ import Notepad from "../pages/Notepad.vue";
 import Projects from "../pages/Projects.vue";
 import Technologies from "../pages/Technologies.vue";
 import Links from "../pages/Links.vue";
+import QuickAccess from "../pages/QuickAccess.vue";
 import Terminal from "../pages/Terminal.vue";
 
 const username = "leonvrdo";
@@ -13,6 +14,7 @@ const router = createRouter({
   history: createWebHistory(),
 
   routes: [
+    // HOME
     {
       path: "/",
       name: "home",
@@ -21,6 +23,8 @@ const router = createRouter({
         title: username,
       },
     },
+
+    // ABOUT ME NOTEPAD
     {
       path: "/about-me",
       name: "about-me",
@@ -29,6 +33,8 @@ const router = createRouter({
         title: username + " | About me",
       },
     },
+
+    // EXPLORER
     {
       path: "/explorer/projects",
       name: "projects",
@@ -53,6 +59,16 @@ const router = createRouter({
         title: username + " | Links",
       },
     },
+    {
+      path: "/explorer/quick-access",
+      name: "quick-access",
+      component: QuickAccess,
+      meta: {
+        title: username + " | Quick Access",
+      },
+    },
+
+    // TERMINAL
     {
       path: "/terminal",
       name: "terminal",
