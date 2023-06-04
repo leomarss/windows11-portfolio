@@ -44,24 +44,44 @@ export default {
 
 <template>
   <Explorer :windowName="explorerName">
-    <a v-for="link in store.links" :href="link.href" target="_blank" class="table-row">
-      <div class="cell table-cell">
-        <div class="file-name-col flex">
-          <img class="file-type-icon" :src="link.icon" />
-          <span>{{ link.name }}</span>
+    <div class="table w-full text-left">
+      <div class="table-header-group">
+        <div class="table-row">
+          <div class="cell table-cell w-[40%]">Name</div>
+          <div class="cell table-cell w-[25%]">Date modified</div>
+          <div class="cell hidden xs:table-cell w-[20%]">Type</div>
+          <div class="cell hidden xs:table-cell w-[15%]">Size</div>
         </div>
       </div>
-      <div class="cell table-cell">{{ currentDatetime }}</div>
-      <div class="cell hidden xs:table-cell">Shortcut</div>
-      <div class="cell hidden xs:table-cell text-right">0 KB</div>
-    </a>
+      <div class="table-row-group">
+        <a v-for="link in store.links" :href="link.href" target="_blank" class="content-row table-row">
+          <div class="cell table-cell">
+            <div class="file-name-col flex">
+              <img class="file-type-icon" :src="link.icon" />
+              <span>{{ link.name }}</span>
+            </div>
+          </div>
+          <div class="cell table-cell">{{ currentDatetime }}</div>
+          <div class="cell hidden xs:table-cell">Shortcut</div>
+          <div class="cell hidden xs:table-cell text-right">0 KB</div>
+        </a>
+      </div>
+    </div>
   </Explorer>
 </template>
 
 <style lang="scss" scoped>
 @import "../assets/partials/variables";
 
-.table-row:hover {
+.table-header-group .cell {
+  padding: 5px;
+  border-right: 1px solid #32323285;
+  &:hover {
+    background-color: #2e2e2e;
+  }
+}
+
+.content-row:hover {
   background-color: #2e2e2e;
 }
 

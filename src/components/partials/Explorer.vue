@@ -282,20 +282,8 @@ export default {
           </div>
         </div>
         <div class="window-content w-full">
-          <div class="table w-full text-left">
-            <div class="table-header-group">
-              <div class="table-row">
-                <div class="cell table-cell w-[40%]">Name</div>
-                <div class="cell table-cell w-[25%]">Date modified</div>
-                <div class="cell hidden xs:table-cell w-[20%]">Type</div>
-                <div class="cell hidden xs:table-cell w-[15%]">Size</div>
-              </div>
-            </div>
-            <div class="table-row-group">
-              <!-- Explorer content -->
-              <slot></slot>
-            </div>
-          </div>
+          <!-- Explorer content here -->
+          <slot></slot>
         </div>
       </div>
     </div>
@@ -498,14 +486,6 @@ export default {
 
   .window-content {
     padding: 0 10px;
-
-    .table-header-group .cell {
-      padding: 5px;
-      border-right: 1px solid #32323285;
-      &:hover {
-        background-color: #2e2e2e;
-      }
-    }
   }
 }
 
