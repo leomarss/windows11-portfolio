@@ -34,9 +34,9 @@ export default {
         <button class="selected-item">
           <img class="w-full h-full" src="/images/menu-bar/windows.png" />
         </button>
-        <button class="selected-item">
+        <router-link :to="{ name: 'quick-access' }" class="selected-item">
           <img class="w-full h-full" src="/images/menu-bar/explorer.png" />
-        </button>
+        </router-link>
         <a href="https://vscode.dev/github/LeonardoMartignoni/windows11-portfolio" target="_blank" class="selected-item">
           <img class="w-full h-full" src="/images/menu-bar/vscode.png" />
         </a>
