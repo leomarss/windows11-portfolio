@@ -235,7 +235,7 @@ export default {
               <span>Pictures</span>
             </div>
           </div>
-          <div class="folder-file folder-opener flex items-center">
+          <router-link :to="{ name: 'this-pc' }" class="folder-file folder-opener flex items-center">
             <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" @click="isThisPcOpen = !isThisPcOpen" :style="isThisPcOpen == false ? 'transform: rotate(-90deg)' : ''">
               <g>
                 <path fill="none" d="M0 0h24v24H0z"></path>
@@ -244,7 +244,7 @@ export default {
             </svg>
             <img src="/images/folder/this-pc.png" />
             <span>This PC</span>
-          </div>
+          </router-link>
 
           <div class="quick-access-content flex flex-col" v-show="isThisPcOpen">
             <router-link :to="{ name: 'desktop-explorer' }" class="folder-file flex items-center">

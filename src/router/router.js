@@ -8,6 +8,7 @@ import Links from "../pages/Links.vue";
 import QuickAccess from "../pages/QuickAccess.vue";
 import DesktopExplorer from "../pages/DesktopExplorer.vue";
 import Downloads from "../pages/Downloads.vue";
+import ThisPc from "../pages/ThisPc.vue";
 import Terminal from "../pages/Terminal.vue";
 
 const username = "leonvrdo";
@@ -83,6 +84,14 @@ const router = createRouter({
       component: Downloads,
       meta: {
         title: username + " | Downloads",
+      },
+    },
+    {
+      path: "/explorer/this-pc",
+      name: "this-pc",
+      component: ThisPc,
+      meta: {
+        title: username + " | This PC",
       },
     },
 
