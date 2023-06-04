@@ -13,6 +13,9 @@ export default {
       initialProjectContentY: 0,
       projectContentX: 0,
       projectContentY: 0,
+
+      isQuickAccessOpen: true,
+      isThisPcOpen: true,
     };
   },
 
@@ -204,7 +207,7 @@ export default {
       <div class="project flex flex-grow">
         <div class="folder-search hidden sm:flex flex-col flex-shrink-0">
           <div class="folder-file folder-opener flex items-center">
-            <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg">
+            <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" @click="isQuickAccessOpen = !isQuickAccessOpen" :style="isQuickAccessOpen == false ? 'transform: rotate(-90deg)' : ''">
               <g>
                 <path fill="none" d="M0 0h24v24H0z"></path>
                 <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path>
@@ -214,7 +217,7 @@ export default {
             <span>Quick access</span>
           </div>
 
-          <div class="quick-access-content flex flex-col">
+          <div class="quick-access-content flex flex-col" v-show="isQuickAccessOpen">
             <div class="folder-file flex items-center">
               <img src="/images/folder/desktop.png" />
               <span>Desktop</span>
@@ -233,7 +236,7 @@ export default {
             </div>
           </div>
           <div class="folder-file folder-opener flex items-center">
-            <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg">
+            <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" @click="isThisPcOpen = !isThisPcOpen" :style="isThisPcOpen == false ? 'transform: rotate(-90deg)' : ''">
               <g>
                 <path fill="none" d="M0 0h24v24H0z"></path>
                 <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path>
@@ -243,7 +246,7 @@ export default {
             <span>This PC</span>
           </div>
 
-          <div class="quick-access-content flex flex-col">
+          <div class="quick-access-content flex flex-col" v-show="isThisPcOpen">
             <div class="folder-file flex items-center">
               <img src="/images/folder/desktop.png" />
               <span>Desktop</span>
@@ -309,8 +312,8 @@ export default {
 .project-content {
   overflow: hidden;
   width: 850px;
-  min-height: auto;
-  max-height: 600px;
+  height: auto;
+  max-height: 650px;
   background-color: #191919;
   border: 1px solid #323232;
   border-radius: 10px;
@@ -503,6 +506,12 @@ export default {
         background-color: #2e2e2e;
       }
     }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .project-content {
+    height: 580px;
   }
 }
 </style>
