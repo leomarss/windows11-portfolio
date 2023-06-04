@@ -43,7 +43,7 @@ export default {
           </div>
         </div>
       </router-link>
-      <div class="folder">
+      <router-link :to="{ name: 'downloads' }" class="folder">
         <div class="folder-content flex">
           <img src="/images/quickaccess/downloads.png" />
           <div class="folder-details flex flex-col">
@@ -54,7 +54,7 @@ export default {
             </svg>
           </div>
         </div>
-      </div>
+      </router-link>
       <div class="folder">
         <div class="folder-content flex">
           <img src="/images/quickaccess/documents.png" />

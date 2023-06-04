@@ -222,10 +222,10 @@ export default {
               <img src="/images/folder/desktop.png" />
               <span>Desktop</span>
             </router-link>
-            <div class="folder-file flex items-center">
+            <router-link :to="{ name: 'downloads' }" class="folder-file flex items-center">
               <img src="/images/folder/downloads.png" />
               <span>Downloads</span>
-            </div>
+            </router-link>
             <div class="folder-file flex items-center">
               <img src="/images/folder/documents.png" />
               <span>Documents</span>
@@ -251,10 +251,10 @@ export default {
               <img src="/images/folder/desktop.png" />
               <span>Desktop</span>
             </router-link>
-            <div class="folder-file flex items-center">
+            <router-link :to="{ name: 'downloads' }" class="folder-file flex items-center">
               <img src="/images/folder/downloads.png" />
               <span>Downloads</span>
-            </div>
+            </router-link>
             <div class="folder-file flex items-center">
               <img src="/images/folder/documents.png" />
               <span>Documents</span>

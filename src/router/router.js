@@ -7,6 +7,7 @@ import Technologies from "../pages/Technologies.vue";
 import Links from "../pages/Links.vue";
 import QuickAccess from "../pages/QuickAccess.vue";
 import DesktopExplorer from "../pages/DesktopExplorer.vue";
+import Downloads from "../pages/Downloads.vue";
 import Terminal from "../pages/Terminal.vue";
 
 const username = "leonvrdo";
@@ -74,6 +75,14 @@ const router = createRouter({
       component: DesktopExplorer,
       meta: {
         title: username + " | Desktop",
+      },
+    },
+    {
+      path: "/explorer/downloads",
+      name: "downloads",
+      component: Downloads,
+      meta: {
+        title: username + " | Downloads",
       },
     },
 
