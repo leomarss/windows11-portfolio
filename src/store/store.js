@@ -115,5 +115,40 @@ export const store = reactive({
     },
   ],
 
+  desktop: [
+    {
+      icon: "/images/desktop/notes.png",
+      name: "About me",
+      type: "Text Document",
+      route: "about-me",
+      dateModified: "04/05/2023 23:48",
+      size: "0 KB",
+    },
+    {
+      icon: "/images/desktop/folder.png",
+      name: "Projects",
+      type: "Folder",
+      route: "projects",
+      dateModified: "04/05/2023 23:48",
+      size: "0 KB",
+    },
+    {
+      icon: "/images/desktop/folder.png",
+      name: "Technologies",
+      type: "Folder",
+      route: "technologies",
+      dateModified: "04/05/2023 23:48",
+      size: "0 KB",
+    },
+    {
+      icon: "/images/desktop/links.png",
+      name: "Links",
+      type: "Folder",
+      route: "links",
+      dateModified: "04/05/2023 23:48",
+      size: "0 KB",
+    },
+  ],
+
   isDragging: false,
 });

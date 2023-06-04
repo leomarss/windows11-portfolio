@@ -13,21 +13,9 @@ export default {
 <template>
   <div class="desktop flex flex-col relative">
     <div class="item-list flex items-start gap-2 h-full">
-      <router-link :to="{ name: 'about-me' }" class="item relative flex flex-col items-center">
-        <img src="/images/desktop/notes.png" />
-        <p>About me</p>
-      </router-link>
-      <router-link :to="{ name: 'projects' }" class="item flex flex-col items-center">
-        <img src="/images/desktop/folder.png" />
-        <p>Projects</p>
-      </router-link>
-      <router-link :to="{ name: 'technologies' }" class="item flex flex-col items-center">
-        <img src="/images/desktop/folder.png" />
-        <p>Technologies</p>
-      </router-link>
-      <router-link :to="{ name: 'links' }" class="item flex flex-col items-center">
-        <img src="/images/desktop/links.png" />
-        <p>Links</p>
+      <router-link v-for="item in store.desktop" :to="{ name: item.route }" class="item flex flex-col items-center">
+        <img :src="item.icon" />
+        <p>{{ item.name }}</p>
       </router-link>
     </div>
     <div class="item-list">
