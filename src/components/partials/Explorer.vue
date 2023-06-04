@@ -206,7 +206,7 @@ export default {
 
       <div class="project flex flex-grow">
         <div class="folder-search hidden sm:flex flex-col flex-shrink-0">
-          <div class="folder-file folder-opener flex items-center">
+          <router-link :to="{ name: 'quick-access' }" class="folder-file folder-opener flex items-center">
             <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" @click="isQuickAccessOpen = !isQuickAccessOpen" :style="isQuickAccessOpen == false ? 'transform: rotate(-90deg)' : ''">
               <g>
                 <path fill="none" d="M0 0h24v24H0z"></path>
@@ -215,13 +215,13 @@ export default {
             </svg>
             <img src="/images/folder/quick-access.png" />
             <span>Quick access</span>
-          </div>
+          </router-link>
 
           <div class="quick-access-content flex flex-col" v-show="isQuickAccessOpen">
-            <div class="folder-file flex items-center">
+            <router-link :to="{ name: 'desktop-explorer' }" class="folder-file flex items-center">
               <img src="/images/folder/desktop.png" />
               <span>Desktop</span>
-            </div>
+            </router-link>
             <div class="folder-file flex items-center">
               <img src="/images/folder/downloads.png" />
               <span>Downloads</span>
@@ -247,10 +247,10 @@ export default {
           </div>
 
           <div class="quick-access-content flex flex-col" v-show="isThisPcOpen">
-            <div class="folder-file flex items-center">
+            <router-link :to="{ name: 'desktop-explorer' }" class="folder-file flex items-center">
               <img src="/images/folder/desktop.png" />
               <span>Desktop</span>
-            </div>
+            </router-link>
             <div class="folder-file flex items-center">
               <img src="/images/folder/downloads.png" />
               <span>Downloads</span>

@@ -31,7 +31,7 @@ export default {
     </div>
 
     <div class="window-dropdown-content grid grid-cols-3">
-      <div class="folder">
+      <router-link :to="{ name: 'desktop-explorer' }" class="folder">
         <div class="folder-content flex">
           <img src="/images/quickaccess/desktop.png" />
           <div class="folder-details flex flex-col">
@@ -42,7 +42,7 @@ export default {
             </svg>
           </div>
         </div>
-      </div>
+      </router-link>
       <div class="folder">
         <div class="folder-content flex">
           <img src="/images/quickaccess/downloads.png" />
