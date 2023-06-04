@@ -13,7 +13,7 @@ export const store = reactive({
     {
       name: "deliveboo-backoffice",
       link: `https://github.com/${githubUsername}/deliveboo-backoffice`,
-      dateModified: "29/05/2023 18:28",
+      dateModified: "29/05/2023 16:59",
       type: "Shortcut",
       size: "171,1 MB",
     },
@@ -111,7 +111,7 @@ export const store = reactive({
     {
       name: "Resume (Curriculum Vitae)",
       icon: "/images/links/cv.png",
-      href: "#",
+      href: "https://drive.google.com/file/d/1n4pFsMisrQxFfmU4kdg8gU0_YA4ncJAA/view?usp=sharing",
     },
   ],
 

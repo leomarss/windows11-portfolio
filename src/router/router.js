@@ -7,6 +7,8 @@ import Technologies from "../pages/Technologies.vue";
 import Links from "../pages/Links.vue";
 import Terminal from "../pages/Terminal.vue";
 
+const username = "leonvrdo";
+
 const router = createRouter({
   history: createWebHistory(),
 
@@ -16,7 +18,7 @@ const router = createRouter({
       name: "home",
       component: Home,
       meta: {
-        title: "leonvrdo",
+        title: username,
       },
     },
     {
@@ -24,7 +26,7 @@ const router = createRouter({
       name: "about-me",
       component: Notepad,
       meta: {
-        title: "leonvrdo | About me",
+        title: username + " | About me",
       },
     },
     {
@@ -32,7 +34,7 @@ const router = createRouter({
       name: "projects",
       component: Projects,
       meta: {
-        title: "leonvrdo | Projects",
+        title: username + " | Projects",
       },
     },
     {
@@ -40,7 +42,7 @@ const router = createRouter({
       name: "technologies",
       component: Technologies,
       meta: {
-        title: "leonvrdo | Technologies",
+        title: username + " | Technologies",
       },
     },
     {
@@ -48,7 +50,7 @@ const router = createRouter({
       name: "links",
       component: Links,
       meta: {
-        title: "leonvrdo | Links",
+        title: username + " | Links",
       },
     },
     {
@@ -56,7 +58,7 @@ const router = createRouter({
       name: "terminal",
       component: Terminal,
       meta: {
-        title: "leonvrdo | Terminal",
+        title: username + " | Terminal",
       },
     },
   ],
