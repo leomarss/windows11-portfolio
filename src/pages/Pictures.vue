@@ -6,12 +6,18 @@ export default {
   data() {
     return {
       store,
-      explorerName: "Pictures",
+      explorerName: this.$t("explorer.pictures"),
     };
   },
 
   components: {
     Explorer,
+  },
+
+  watch: {
+    "$i18n.locale"(newLocale) {
+      this.explorerName = this.$t("explorer.pictures");
+    },
   },
 };
 </script>

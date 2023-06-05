@@ -9,7 +9,7 @@ export default {
       store,
 
       projects: [],
-      explorerName: "Projects",
+      explorerName: this.$t("desktop[1].name"),
     };
   },
 
@@ -24,6 +24,7 @@ export default {
   watch: {
     "$i18n.locale"(newLocale) {
       this.updateProjects();
+      this.explorerName = this.$t("desktop[1].name");
     },
   },
 

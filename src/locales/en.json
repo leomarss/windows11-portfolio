@@ -162,7 +162,41 @@
     "size": "Size"
   },
 
+  "explorer": {
+    "edit": {
+      "new": "New",
+      "sort": "Sort",
+      "view": "View",
+      "search": "Search"
+    },
+
+    "this-pc": "This PC",
+    "desktop": "Desktop",
+    "quick-access": "Quick access",
+    "downloads": "Downloads",
+    "documents": "Documents",
+    "pictures": "Pictures",
+    "videos": "Videos",
+    "music": "Music"
+  },
+
+  "this-pc": {
+    "folders": "Folders",
+    "devices": "Devices and drives"
+  },
+
+  "notepad": {
+    "name": "Notepad",
+    "info": {
+      "file": "File",
+      "edit": "Edit",
+      "view": "View"
+    }
+  },
+
   "recycle-bin": "Recycle Bin",
   "about-me-message": "Hello, my name is Leonardo! 👋\n\nI'm 20 years old and I'm from Rome, Italy.\nI have been passionate about the world of technology and programming for years.\nFeel free to check out all my links by clicking the \"Links\" folder! 👀\n\nThis website was created using Vue.js and other frameworks :D\n\nSource code available: https://github.com/LeonardoMartignoni/windows11-portfolio",
-  "empty-folder": "This folder is empty."
+  "empty-folder": "This folder is empty.",
+  "disk-free-space": "free of",
+  "terminal": "Terminal"
 }

@@ -10,7 +10,7 @@ export default {
 
       currentDatetime: "",
       technologies: [],
-      explorerName: "Technologies",
+      explorerName: this.$t("desktop[2].name"),
     };
   },
 
@@ -27,6 +27,7 @@ export default {
   watch: {
     "$i18n.locale"(newLocale) {
       this.updateTechnologies();
+      this.explorerName = this.$t("desktop[2].name");
     },
   },
 

@@ -10,7 +10,7 @@ export default {
 
       currentDatetime: "",
       links: [],
-      explorerName: "Links",
+      explorerName: this.$t("desktop[3].name"),
     };
   },
 
@@ -27,6 +27,7 @@ export default {
   watch: {
     "$i18n.locale"(newLocale) {
       this.updateLinks();
+      this.explorerName = this.$t("desktop[3].name");
     },
   },
 

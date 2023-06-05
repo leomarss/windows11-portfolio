@@ -81,7 +81,7 @@ export default {
               <path d="M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z"></path>
               <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
             </svg>
-            <span>New</span>
+            <span>{{ $t("explorer.edit.new") }}</span>
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <path fill="none" d="M0 0h24v24H0z"></path>
@@ -133,7 +133,7 @@ export default {
         <div class="edit-new">
           <div class="edit-new-content flex items-center">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg"><path d="M7 20h2V8h3L8 4 4 8h3zm13-4h-3V4h-2v12h-3l4 4z"></path></svg>
-            <span>Sort</span>
+            <span>{{ $t("explorer.edit.sort") }}</span>
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <path fill="none" d="M0 0h24v24H0z"></path>
@@ -146,7 +146,7 @@ export default {
         <div class="edit-new">
           <div class="edit-new-content flex items-center">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg"><path d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"></path></svg>
-            <span>View</span>
+            <span>{{ $t("explorer.edit.view") }}</span>
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <path fill="none" d="M0 0h24v24H0z"></path>
@@ -200,7 +200,7 @@ export default {
         <div class="window-input h-full hidden xs:flex items-center grow">
           <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M15.25 0a8.25 8.25 0 0 0-6.18 13.72L1 22.88l1.12 1 8.05-9.12A8.251 8.251 0 1 0 15.25.01V0zm0 15a6.75 6.75 0 1 1 0-13.5 6.75 6.75 0 0 1 0 13.5z"></path></svg>
 
-          <input type="text" :placeholder="'Search: ' + windowName" />
+          <input type="text" :placeholder="$t('explorer.edit.search') + ': ' + windowName" />
         </div>
       </div>
 
@@ -214,25 +214,25 @@ export default {
               </g>
             </svg>
             <img src="/images/folder/quick-access.png" />
-            <span>Quick access</span>
+            <span>{{ $t("explorer.quick-access") }}</span>
           </router-link>
 
           <div class="quick-access-content flex flex-col" v-show="isQuickAccessOpen">
             <router-link :to="{ name: 'desktop-explorer' }" class="folder-file flex items-center">
               <img src="/images/folder/desktop.png" />
-              <span>Desktop</span>
+              <span>{{ $t("explorer.desktop") }}</span>
             </router-link>
             <router-link :to="{ name: 'downloads' }" class="folder-file flex items-center">
               <img src="/images/folder/downloads.png" />
-              <span>Downloads</span>
+              <span>{{ $t("explorer.downloads") }}</span>
             </router-link>
             <router-link :to="{ name: 'documents' }" class="folder-file flex items-center">
               <img src="/images/folder/documents.png" />
-              <span>Documents</span>
+              <span>{{ $t("explorer.documents") }}</span>
             </router-link>
             <router-link :to="{ name: 'pictures' }" class="folder-file flex items-center">
               <img src="/images/folder/pictures.png" />
-              <span>Pictures</span>
+              <span>{{ $t("explorer.pictures") }}</span>
             </router-link>
           </div>
           <router-link :to="{ name: 'this-pc' }" class="folder-file folder-opener flex items-center">
@@ -243,33 +243,33 @@ export default {
               </g>
             </svg>
             <img src="/images/folder/this-pc.png" />
-            <span>This PC</span>
+            <span>{{ $t("explorer.this-pc") }}</span>
           </router-link>
 
           <div class="quick-access-content flex flex-col" v-show="isThisPcOpen">
             <router-link :to="{ name: 'desktop-explorer' }" class="folder-file flex items-center">
               <img src="/images/folder/desktop.png" />
-              <span>Desktop</span>
+              <span>{{ $t("explorer.desktop") }}</span>
             </router-link>
             <router-link :to="{ name: 'downloads' }" class="folder-file flex items-center">
               <img src="/images/folder/downloads.png" />
-              <span>Downloads</span>
+              <span>{{ $t("explorer.downloads") }}</span>
             </router-link>
             <router-link :to="{ name: 'documents' }" class="folder-file flex items-center">
               <img src="/images/folder/documents.png" />
-              <span>Documents</span>
+              <span>{{ $t("explorer.documents") }}</span>
             </router-link>
             <router-link :to="{ name: 'pictures' }" class="folder-file flex items-center">
               <img src="/images/folder/pictures.png" />
-              <span>Pictures</span>
+              <span>{{ $t("explorer.pictures") }}</span>
             </router-link>
             <router-link :to="{ name: 'videos' }" class="folder-file flex items-center">
               <img src="/images/folder/videos.png" />
-              <span>Videos</span>
+              <span>{{ $t("explorer.videos") }}</span>
             </router-link>
             <router-link :to="{ name: 'music' }" class="folder-file flex items-center">
               <img src="/images/folder/music.png" />
-              <span>Music</span>
+              <span>{{ $t("explorer.music") }}</span>
             </router-link>
             <div class="folder-file flex items-center">
               <img src="/images/folder/primary-disk.png" />

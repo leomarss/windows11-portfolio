@@ -1,17 +1,37 @@
 <script>
 import { store } from "../store/store";
+import { i18n } from "../main";
 import Explorer from "../components/partials/Explorer.vue";
 
 export default {
   data() {
     return {
       store,
-      explorerName: "Desktop",
+
+      desktop: [],
+      explorerName: this.$t("explorer.desktop"),
     };
   },
 
   components: {
     Explorer,
+  },
+
+  mounted() {
+    this.updateDesktop();
+  },
+
+  watch: {
+    "$i18n.locale"(newLocale) {
+      this.updateDesktop();
+      this.explorerName = this.$t("explorer.desktop");
+    },
+  },
+
+  methods: {
+    updateDesktop() {
+      this.desktop = i18n.global.tm("desktop");
+    },
   },
 };
 </script>
@@ -28,7 +48,7 @@ export default {
         </div>
       </div>
       <div class="table-row-group">
-        <router-link v-for="item in store.desktop" :to="{ name: item.route }" class="content-row table-row">
+        <router-link v-for="item in desktop" :to="{ name: item.route }" class="content-row table-row">
           <div class="cell table-cell">
             <div class="file-name-col flex">
               <img class="file-type-icon" :src="item.icon" />
