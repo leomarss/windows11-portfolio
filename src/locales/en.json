@@ -1,8 +1,4 @@
 {
-  "main": {
-    "hello": "Hello world!"
-  },
-
   "projects": [
     {
       "name": "deliveboo-frontoffice",
@@ -61,61 +57,69 @@
       "size": "3,8 MB"
     }
   ],
-
   "technologies": [
     {
       "name": "HTML",
-      "icon": "/images/technologies/html.png"
+      "icon": "/images/technologies/html.png",
+      "type": "Shortcut"
     },
     {
       "name": "CSS",
-      "icon": "/images/technologies/css.png"
+      "icon": "/images/technologies/css.png",
+      "type": "Shortcut"
     },
     {
       "name": "Javascript",
-      "icon": "/images/technologies/js.png"
+      "icon": "/images/technologies/js.png",
+      "type": "Shortcut"
     },
     {
       "name": "PHP",
-      "icon": "/images/technologies/php.png"
+      "icon": "/images/technologies/php.png",
+      "type": "Shortcut"
     },
     {
       "name": "MySQL",
-      "icon": "/images/technologies/mysql.png"
+      "icon": "/images/technologies/mysql.png",
+      "type": "Shortcut"
     },
     {
       "name": "Vue.js",
-      "icon": "/images/technologies/vue.png"
+      "icon": "/images/technologies/vue.png",
+      "type": "Shortcut"
     },
     {
       "name": "Laravel",
-      "icon": "/images/technologies/laravel.png"
+      "icon": "/images/technologies/laravel.png",
+      "type": "Shortcut"
     }
   ],
-
   "links": [
     {
       "name": "Linkedin",
+      "type": "Shortcut",
       "icon": "/images/links/linkedin.png",
       "href": "https://www.linkedin.com/in/leonardo-martignoni/"
     },
     {
       "name": "Github",
+      "type": "Shortcut",
       "icon": "/images/links/github.png",
       "href": "https://github.com/LeonardoMartignoni"
     },
     {
       "name": "Email",
+      "type": "Shortcut",
       "icon": "/images/links/email.png",
       "href": "mailto:leonardo.martignonii@gmail.com"
     },
     {
       "name": "Resume (Curriculum Vitae)",
+      "type": "Shortcut",
       "icon": "/images/links/cv.png",
       "href": "https://drive.google.com/file/d/1n4pFsMisrQxFfmU4kdg8gU0_YA4ncJAA/view?usp=sharing"
     }
   ],
-
   "desktop": [
     {
       "icon": "/images/desktop/notes.png",
@@ -151,5 +155,14 @@
     }
   ],
 
-  "recycle-bin": "Recycle Bin"
+  "table-heading": {
+    "name": "Name",
+    "date-modified": "Date modified",
+    "type": "Type",
+    "size": "Size"
+  },
+
+  "recycle-bin": "Recycle Bin",
+  "about-me-message": "Hello, my name is Leonardo! 👋\n\nI'm 20 years old and I'm from Rome, Italy.\nI have been passionate about the world of technology and programming for years.\nFeel free to check out all my links by clicking the \"Links\" folder! 👀\n\nThis website was created using Vue.js and other frameworks :D\n\nSource code available: https://github.com/LeonardoMartignoni/windows11-portfolio",
+  "empty-folder": "This folder is empty."
 }

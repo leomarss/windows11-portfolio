@@ -21,10 +21,10 @@ export default {
     <div class="table w-full text-left">
       <div class="table-header-group">
         <div class="table-row">
-          <div class="cell table-cell w-[40%]">Name</div>
-          <div class="cell table-cell w-[25%]">Date modified</div>
-          <div class="cell hidden xs:table-cell w-[20%]">Type</div>
-          <div class="cell hidden xs:table-cell w-[15%]">Size</div>
+          <div class="cell table-cell w-[40%]">{{ $t("table-heading.name") }}</div>
+          <div class="cell table-cell w-[25%]">{{ $t("table-heading.date-modified") }}</div>
+          <div class="cell hidden xs:table-cell w-[20%]">{{ $t("table-heading.type") }}</div>
+          <div class="cell hidden xs:table-cell w-[15%]">{{ $t("table-heading.size") }}</div>
         </div>
       </div>
       <div class="table-row-group">

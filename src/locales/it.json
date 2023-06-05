@@ -1,8 +1,4 @@
 {
-  "main": {
-    "hello": "Ciao mondo!"
-  },
-
   "projects": [
     {
       "name": "deliveboo-frontoffice",
@@ -64,51 +60,62 @@
   "technologies": [
     {
       "name": "HTML",
-      "icon": "/images/technologies/html.png"
+      "icon": "/images/technologies/html.png",
+      "type": "Scorciatoia"
     },
     {
       "name": "CSS",
-      "icon": "/images/technologies/css.png"
+      "icon": "/images/technologies/css.png",
+      "type": "Scorciatoia"
     },
     {
       "name": "Javascript",
-      "icon": "/images/technologies/js.png"
+      "icon": "/images/technologies/js.png",
+      "type": "Scorciatoia"
     },
     {
       "name": "PHP",
-      "icon": "/images/technologies/php.png"
+      "icon": "/images/technologies/php.png",
+      "type": "Scorciatoia"
     },
     {
       "name": "MySQL",
-      "icon": "/images/technologies/mysql.png"
+      "icon": "/images/technologies/mysql.png",
+      "type": "Scorciatoia"
     },
     {
       "name": "Vue.js",
-      "icon": "/images/technologies/vue.png"
+      "icon": "/images/technologies/vue.png",
+      "type": "Scorciatoia"
     },
     {
       "name": "Laravel",
-      "icon": "/images/technologies/laravel.png"
+      "icon": "/images/technologies/laravel.png",
+      "type": "Scorciatoia"
     }
   ],
   "links": [
     {
       "name": "Linkedin",
+      "type": "Scorciatoia",
       "icon": "/images/links/linkedin.png",
       "href": "https://www.linkedin.com/in/leonardo-martignoni/"
     },
     {
       "name": "Github",
+      "type": "Scorciatoia",
       "icon": "/images/links/github.png",
       "href": "https://github.com/LeonardoMartignoni"
     },
     {
       "name": "Email",
+      "type": "Scorciatoia",
       "icon": "/images/links/email.png",
       "href": "mailto:leonardo.martignonii@gmail.com"
     },
     {
       "name": "Curriculum Vitae",
+      "type": "Scorciatoia",
       "icon": "/images/links/cv.png",
       "href": "https://drive.google.com/file/d/1n4pFsMisrQxFfmU4kdg8gU0_YA4ncJAA/view?usp=sharing"
     }
@@ -148,5 +155,14 @@
     }
   ],
 
-  "recycle-bin": "Cestino"
+  "table-heading": {
+    "name": "Nome",
+    "date-modified": "Ultima modifica",
+    "type": "Tipo",
+    "size": "Peso"
+  },
+
+  "recycle-bin": "Cestino",
+  "about-me-message": "Ciao, mi chiamo Leonardo! 👋\n\nHo 20 anni e sono di Roma.\nDa anni sono appassionato al mondo della tecnologia e della programmazione.\nPuoi vedere tutti i miei link cliccando sulla cartella \"Links\"! 👀\n\nQuesta webapp è stata realizzata utilizzando Vue.js e altri framework :D\n\nCodice sorgente disponibile su: https://github.com/LeonardoMartignoni/windows11-portfolio",
+  "empty-folder": "Questa cartella è vuota."
 }

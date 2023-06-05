@@ -1,6 +1,6 @@
 <script>
 import { store } from "../store/store";
-import { i18n } from "../main"; // importa l'istanza di vue-i18
+import { i18n } from "../main";
 
 export default {
   data() {

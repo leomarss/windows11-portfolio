@@ -1,5 +1,6 @@
 <script>
 import { store } from "../store/store";
+import { i18n } from "../main";
 import Explorer from "../components/partials/Explorer.vue";
 
 export default {
@@ -8,6 +9,7 @@ export default {
       store,
 
       currentDatetime: "",
+      links: [],
       explorerName: "Links",
     };
   },
@@ -17,8 +19,15 @@ export default {
   },
 
   mounted() {
+    this.updateLinks();
     this.formattedDateTime();
     setInterval(this.formattedDateTime, 1000);
+  },
+
+  watch: {
+    "$i18n.locale"(newLocale) {
+      this.updateLinks();
+    },
   },
 
   methods: {
@@ -38,6 +47,10 @@ export default {
 
       this.currentDatetime = `${formattedDay}/${formattedMonth}/${year} ${formattedHours}:${formattedMinutes}`;
     },
+
+    updateLinks() {
+      this.links = i18n.global.tm("links");
+    },
   },
 };
 </script>
@@ -47,14 +60,14 @@ export default {
     <div class="table w-full text-left">
       <div class="table-header-group">
         <div class="table-row">
-          <div class="cell table-cell w-[40%]">Name</div>
-          <div class="cell table-cell w-[25%]">Date modified</div>
-          <div class="cell hidden xs:table-cell w-[20%]">Type</div>
-          <div class="cell hidden xs:table-cell w-[15%]">Size</div>
+          <div class="cell table-cell w-[40%]">{{ $t("table-heading.name") }}</div>
+          <div class="cell table-cell w-[25%]">{{ $t("table-heading.date-modified") }}</div>
+          <div class="cell hidden xs:table-cell w-[20%]">{{ $t("table-heading.type") }}</div>
+          <div class="cell hidden xs:table-cell w-[15%]">{{ $t("table-heading.size") }}</div>
         </div>
       </div>
       <div class="table-row-group">
-        <a v-for="link in store.links" :href="link.href" target="_blank" class="content-row table-row">
+        <a v-for="link in links" :href="link.href" target="_blank" class="content-row table-row">
           <div class="cell table-cell">
             <div class="file-name-col flex">
               <img class="file-type-icon" :src="link.icon" />
@@ -62,7 +75,7 @@ export default {
             </div>
           </div>
           <div class="cell table-cell">{{ currentDatetime }}</div>
-          <div class="cell hidden xs:table-cell">Shortcut</div>
+          <div class="cell hidden xs:table-cell">{{ link.type }}</div>
           <div class="cell hidden xs:table-cell text-right">0 KB</div>
         </a>
       </div>
