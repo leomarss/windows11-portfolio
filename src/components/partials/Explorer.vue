@@ -226,14 +226,14 @@ export default {
               <img src="/images/folder/downloads.png" />
               <span>Downloads</span>
             </router-link>
-            <div class="folder-file flex items-center">
+            <router-link :to="{ name: 'documents' }" class="folder-file flex items-center">
               <img src="/images/folder/documents.png" />
               <span>Documents</span>
-            </div>
-            <div class="folder-file flex items-center">
+            </router-link>
+            <router-link :to="{ name: 'pictures' }" class="folder-file flex items-center">
               <img src="/images/folder/pictures.png" />
               <span>Pictures</span>
-            </div>
+            </router-link>
           </div>
           <router-link :to="{ name: 'this-pc' }" class="folder-file folder-opener flex items-center">
             <svg stroke="currentColor" fill="gray" stroke-width="0" viewBox="0 0 24 24" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" @click="isThisPcOpen = !isThisPcOpen" :style="isThisPcOpen == false ? 'transform: rotate(-90deg)' : ''">
@@ -255,22 +255,22 @@ export default {
               <img src="/images/folder/downloads.png" />
               <span>Downloads</span>
             </router-link>
-            <div class="folder-file flex items-center">
+            <router-link :to="{ name: 'documents' }" class="folder-file flex items-center">
               <img src="/images/folder/documents.png" />
               <span>Documents</span>
-            </div>
-            <div class="folder-file flex items-center">
+            </router-link>
+            <router-link :to="{ name: 'pictures' }" class="folder-file flex items-center">
               <img src="/images/folder/pictures.png" />
               <span>Pictures</span>
-            </div>
-            <div class="folder-file flex items-center">
+            </router-link>
+            <router-link :to="{ name: 'videos' }" class="folder-file flex items-center">
               <img src="/images/folder/videos.png" />
               <span>Videos</span>
-            </div>
-            <div class="folder-file flex items-center">
+            </router-link>
+            <router-link :to="{ name: 'music' }" class="folder-file flex items-center">
               <img src="/images/folder/music.png" />
               <span>Music</span>
-            </div>
+            </router-link>
             <div class="folder-file flex items-center">
               <img src="/images/folder/primary-disk.png" />
               <span>256GB SSD</span>

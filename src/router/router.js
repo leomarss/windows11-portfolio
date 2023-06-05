@@ -9,6 +9,10 @@ import QuickAccess from "../pages/QuickAccess.vue";
 import DesktopExplorer from "../pages/DesktopExplorer.vue";
 import Downloads from "../pages/Downloads.vue";
 import ThisPc from "../pages/ThisPc.vue";
+import Documents from "../pages/Documents.vue";
+import Pictures from "../pages/Pictures.vue";
+import Videos from "../pages/Videos.vue";
+import Music from "../pages/Music.vue";
 import Terminal from "../pages/Terminal.vue";
 
 const username = "leonvrdo";
@@ -92,6 +96,38 @@ const router = createRouter({
       component: ThisPc,
       meta: {
         title: username + " | This PC",
+      },
+    },
+    {
+      path: "/explorer/documents",
+      name: "documents",
+      component: Documents,
+      meta: {
+        title: username + " | Documents",
+      },
+    },
+    {
+      path: "/explorer/pictures",
+      name: "pictures",
+      component: Pictures,
+      meta: {
+        title: username + " | Pictures",
+      },
+    },
+    {
+      path: "/explorer/videos",
+      name: "videos",
+      component: Videos,
+      meta: {
+        title: username + " | Videos",
+      },
+    },
+    {
+      path: "/explorer/music",
+      name: "music",
+      component: Music,
+      meta: {
+        title: username + " | Music",
       },
     },
 
