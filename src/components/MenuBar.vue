@@ -4,9 +4,15 @@ export default {
     return {
       currentTime: "",
       currentDate: "",
+
+      toggleLang: false,
     };
   },
   mounted() {
+    if (localStorage.getItem("lang") !== null) {
+      this.$i18n.locale = localStorage.getItem("lang");
+    }
+
     this.updateDateTime();
     setInterval(this.updateDateTime, 1000);
   },
@@ -21,6 +27,12 @@ export default {
 
       this.currentTime = `${hours}:${minutes}`;
       this.currentDate = `${day}/${month}/${year}`;
+    },
+
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
+      localStorage.setItem("lang", lang);
+      this.toggleLang = false;
     },
   },
 };
@@ -45,11 +57,20 @@ export default {
         </router-link>
       </div>
 
-      <!-- Left menu -->
-      <div class="left-menu-bar h-full flex gap-0.5 absolute top-0 right-0">
-        <button class="selected-item h-full flex items-center">
-          <span class="lang">ENG</span>
-        </button>
+      <!-- Right menu -->
+      <div class="right-menu-bar h-full flex gap-0.5 absolute top-0 right-0">
+        <div class="relative h-full">
+          <div class="h-full" @click="toggleLang = !toggleLang">
+            <span class="lang h-full flex items-center justify-center">
+              {{ this.$i18n.locale == "it" ? "ITA" : "ENG" }}
+            </span>
+          </div>
+          <div v-show="toggleLang" class="change-lang absolute bottom-[50px] w-full h-full flex items-center justify-center">
+            <button class="lang" @click="changeLanguage(this.$i18n.locale == 'it' ? 'en' : 'it')">
+              {{ this.$i18n.locale == "it" ? "ENG" : "ITA" }}
+            </button>
+          </div>
+        </div>
         <button class="wifi-volume selected-item h-full flex gap-1 items-center">
           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" width="1.2em" height="1.2em" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -88,10 +109,16 @@ export default {
       }
     }
 
-    .left-menu-bar {
+    .right-menu-bar {
       .lang {
+        cursor: pointer;
+        min-width: 45px;
         font-size: 12px;
         padding: 8px;
+        &:hover {
+          background-color: #2e2e2e;
+          border-radius: 5px;
+        }
       }
 
       .wifi-volume {
@@ -101,6 +128,12 @@ export default {
       .date {
         font-size: 12px;
         padding: 0px 8px;
+      }
+
+      .change-lang {
+        border-radius: 5px;
+        background-color: #212121;
+        border: 1px solid #3f3f3f;
       }
     }
   }
