@@ -11,10 +11,10 @@ export default {
 
       isSelecting: false,
       selectionBox: {
-        startX: 0,
-        startY: 0,
-        endX: 0,
-        endY: 0,
+        startX: NaN,
+        startY: NaN,
+        endX: NaN,
+        endY: NaN,
       },
     };
   },
@@ -134,8 +134,6 @@ export default {
 @import "./assets/partials/variables";
 
 .mouse-selection {
-  width: 500px;
-  height: 500px;
   border: 1px solid #4af;
   background: rgba(68, 170, 255, 0.5);
   z-index: 2;
