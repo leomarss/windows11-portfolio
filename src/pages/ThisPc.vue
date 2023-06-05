@@ -125,7 +125,7 @@ export default {
             <div class="space-bar relative">
               <div class="fill-space-bar absolute top-0 left-0 h-full"></div>
             </div>
-            <span>100 GB free of 4000 GB</span>
+            <span>62 GB free of 256 GB</span>
           </div>
         </div>
       </div>
@@ -137,7 +137,7 @@ export default {
             <div class="space-bar relative">
               <div class="hdd fill-space-bar absolute top-0 left-0 h-full"></div>
             </div>
-            <span>100 GB free of 4000 GB</span>
+            <span>3677 GB free of 4000 GB</span>
           </div>
         </div>
       </div>
@@ -182,12 +182,12 @@ export default {
           width: 10rem;
 
           .fill-space-bar {
-            width: 65%;
+            width: 71%;
             background-color: #26a0da;
           }
 
           .hdd.fill-space-bar {
-            width: 20%;
+            width: 8%;
           }
         }
       }
