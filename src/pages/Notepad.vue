@@ -5,18 +5,53 @@ export default {
   data() {
     return {
       store,
+
+      isMouseDown: false,
+      initialMouseX: 0,
+      initialMouseY: 0,
+      initialProjectContentX: 0,
+      initialProjectContentY: 0,
+      projectContentX: 0,
+      projectContentY: 0,
     };
+  },
+
+  methods: {
+    handleMouseDown(event) {
+      this.isMouseDown = true;
+      this.store.isDragging = true;
+      this.initialMouseX = event.clientX;
+      this.initialMouseY = event.clientY;
+      this.initialProjectContentX = this.projectContentX;
+      this.initialProjectContentY = this.projectContentY;
+      window.addEventListener("mousemove", this.handleMouseMove);
+      window.addEventListener("mouseup", this.handleMouseUp);
+    },
+    handleMouseMove(event) {
+      if (this.isMouseDown) {
+        const deltaX = event.clientX - this.initialMouseX;
+        const deltaY = event.clientY - this.initialMouseY;
+        this.projectContentX = this.initialProjectContentX + deltaX;
+        this.projectContentY = this.initialProjectContentY + deltaY;
+      }
+    },
+    handleMouseUp() {
+      this.isMouseDown = false;
+      this.store.isDragging = false;
+      window.removeEventListener("mousemove", this.handleMouseMove);
+      window.removeEventListener("mouseup", this.handleMouseUp);
+    },
   },
 };
 </script>
 
 <template>
   <div class="notepad-container absolute w-full flex justify-center items-center">
-    <div class="notepad-content relative flex flex-col">
+    <div class="notepad-content relative flex flex-col" :style="{ left: projectContentX + 'px', top: projectContentY + 'px' }">
       <div class="window-info flex justify-between">
-        <div class="window-name h-full flex items-center">
+        <div class="window-name h-full flex items-center flex-grow" @mousedown="handleMouseDown">
           <img src="/images/notepad/notepad.png" />
-          <span>Notepad</span>
+          <span>{{ $t("notepad.name") }}</span>
         </div>
 
         <div class="window-buttons flex">
@@ -33,13 +68,13 @@ export default {
       </div>
       <div class="window-edit">
         <button>
-          <span>File</span>
+          <span>{{ $t("notepad.info.file") }}</span>
         </button>
         <button>
-          <span>Edit</span>
+          <span>{{ $t("notepad.info.edit") }}</span>
         </button>
         <button>
-          <span>View</span>
+          <span>{{ $t("notepad.info.view") }}</span>
         </button>
       </div>
 
