@@ -12,7 +12,7 @@ export default {
     if (localStorage.getItem("lang") !== null) {
       this.$i18n.locale = localStorage.getItem("lang");
     }
-
+    console.log(this.$i18n.locale);
     this.updateDateTime();
     setInterval(this.updateDateTime, 1000);
   },

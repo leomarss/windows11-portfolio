@@ -1,11 +1,30 @@
 <script>
 import { store } from "../store/store";
+import { i18n } from "../main"; // importa l'istanza di vue-i18
 
 export default {
   data() {
     return {
       store,
+
+      desktop: [],
     };
+  },
+
+  mounted() {
+    this.updateDesktop();
+  },
+
+  watch: {
+    "$i18n.locale"(newLocale) {
+      this.updateDesktop();
+    },
+  },
+
+  methods: {
+    updateDesktop() {
+      this.desktop = i18n.global.tm("desktop");
+    },
   },
 };
 </script>
@@ -13,7 +32,7 @@ export default {
 <template>
   <div class="desktop flex flex-col relative">
     <div class="item-list flex items-start gap-2 h-full">
-      <router-link v-for="item in store.desktop" :to="{ name: item.route }" class="item flex flex-col items-center">
+      <router-link v-for="item in desktop" :to="{ name: item.route }" class="item flex flex-col items-center">
         <img :src="item.icon" />
         <p>{{ item.name }}</p>
       </router-link>
@@ -22,7 +41,7 @@ export default {
       <!-- Recycle bin -->
       <div class="item flex flex-col items-center">
         <img src="/images/desktop/trash.png" />
-        <p>Recycle Bin</p>
+        <p>{{ $t("recycle-bin") }}</p>
       </div>
     </div>
   </div>
