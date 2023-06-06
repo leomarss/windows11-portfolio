@@ -8,7 +8,6 @@ export default {
   data() {
     return {
       store,
-
       isSelecting: false,
       selectionBox: {
         startX: NaN,
@@ -92,13 +91,27 @@ export default {
     isRectIntersecting(rect1, rect2) {
       return rect1.left < rect2.left + rect2.width && rect1.left + rect1.width > rect2.left && rect1.top < rect2.top + rect2.height && rect1.top + rect1.height > rect2.top;
     },
-    // Aggiunto nuovo metodo per iniziare il trascinamento della finestra
     startDragging(event) {
       this.store.isDragging = true;
     },
-    // Aggiunto nuovo metodo per terminare il trascinamento della finestra
     endDragging(event) {
       this.store.isDragging = false;
+    },
+  },
+
+  watch: {
+    $route(to, from) {
+      if (to.name === "home") {
+        this.store.routeCount = 0;
+        this.store.isFirstRoute = true;
+      } else {
+        if (this.store.routeCount >= 1) {
+          this.store.isFirstRoute = false;
+        } else {
+          this.store.isFirstRoute = true;
+        }
+        this.store.routeCount++;
+      }
     },
   },
 
@@ -121,7 +134,11 @@ export default {
     <!-- Mouse selector -->
     <div class="mouse-selection fixed" v-if="isSelecting" :style="selectionBoxStyle"></div>
 
-    <router-view></router-view>
+    <router-view v-slot="{ Component }">
+      <transition name="scale" :css="store.isFirstRoute">
+        <component :is="Component" />
+      </transition>
+    </router-view>
 
     <!-- Desktop -->
     <Desktop />
@@ -138,5 +155,15 @@ export default {
   background: rgba(68, 170, 255, 0.5);
   z-index: 2;
   pointer-events: none;
+}
+
+.scale-enter-from {
+  z-index: 1;
+  transform: scale(0);
+}
+
+.scale-enter-active {
+  z-index: 1;
+  transition: 0.15s;
 }
 </style>
