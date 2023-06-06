@@ -166,4 +166,14 @@ export default {
   z-index: 1;
   transition: 0.15s;
 }
+
+.scale-leave-to {
+  z-index: 1;
+  transform: scale(0);
+}
+
+.scale-leave-active {
+  z-index: 1;
+  transition: 0.15s;
+}
 </style>
