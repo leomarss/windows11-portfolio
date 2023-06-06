@@ -15,7 +15,7 @@ import Videos from "../pages/Videos.vue";
 import Music from "../pages/Music.vue";
 import Terminal from "../pages/Terminal.vue";
 
-const username = "leonvrdo";
+const username = "leo";
 
 const router = createRouter({
   history: createWebHistory(),
