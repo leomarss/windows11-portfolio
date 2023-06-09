@@ -6,7 +6,7 @@ Windows 11 personal portfolio built with Vue.js and Tailwind, deployed on Netlif
 
 <!-- To add -->
 
-View the live demo here: SITE_LINK
+View the live demo here: [leonardo.is](https://www.leonardo.is/)
 
 ## Learn more
 
@@ -15,4 +15,4 @@ View the live demo here: SITE_LINK
 
 ## Deploy
 
-You can deploy this app on Netlify by following <a href="https://www.netlify.com/with/vue/">this guide</a>.
+You can deploy this app on Vercel by following [this guide](https://vercel.com/solutions/vue).
