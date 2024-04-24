@@ -13,7 +13,12 @@ export default {
       initialProjectContentY: 0,
       projectContentX: 0,
       projectContentY: 0,
+      age: 0,
     };
+  },
+
+  mounted() {
+    this.age = this.calculateAge;
   },
 
   methods: {
@@ -40,6 +45,20 @@ export default {
       this.store.isDragging = false;
       window.removeEventListener("mousemove", this.handleMouseMove);
       window.removeEventListener("mouseup", this.handleMouseUp);
+    },
+  },
+
+  computed: {
+    calculateAge() {
+      const currentDate = new Date();
+      const birthDate = new Date("2002-12-19");
+
+      let age = currentDate.getFullYear() - birthDate.getFullYear();
+      if (currentDate.getMonth() < birthDate.getMonth() || (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
+        age--;
+      }
+
+      return age;
     },
   },
 };
@@ -80,7 +99,7 @@ export default {
 
       <div class="notepad flex flex-grow flex-col">
         <!-- Text Area -->
-        <textarea class="notepad-text h-full" spellcheck="false">{{ $t("about-me-message") }}</textarea>
+        <textarea class="notepad-text h-full" spellcheck="false">{{ $t("about-me-message", { age: this.age }) }}</textarea>
 
         <div class="notepad-footer mt-auto flex justify-between">
           <div class="notepad-lines">
