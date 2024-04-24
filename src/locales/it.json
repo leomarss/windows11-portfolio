@@ -195,7 +195,7 @@
   },
 
   "recycle-bin": "Cestino",
-  "about-me-message": "Ciao, mi chiamo Leonardo! 👋\n\nHo 20 anni e sono di Roma.\nDa anni sono appassionato al mondo della tecnologia e della programmazione.\nPuoi vedere tutti i miei link cliccando sulla cartella \"Links\"! 👀\n\nQuesta webapp è stata realizzata utilizzando Vue.js e altri framework :D\n\nCodice sorgente disponibile su: https://github.com/LeonardoMartignoni/windows11-portfolio",
+  "about-me-message": "Ciao, mi chiamo Leonardo! 👋\n\nHo {age} anni e sono di Roma.\nDa anni sono appassionato al mondo della tecnologia e della programmazione.\nPuoi vedere tutti i miei link cliccando sulla cartella \"Links\"! 👀\n\nQuesta webapp è stata realizzata utilizzando Vue.js e altri framework :D\n\nCodice sorgente disponibile su: https://github.com/LeonardoMartignoni/windows11-portfolio",
   "empty-folder": "Questa cartella è vuota.",
   "disk-free-space": "liberi su",
   "terminal": "Terminale"
