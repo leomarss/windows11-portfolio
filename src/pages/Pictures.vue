@@ -1,5 +1,5 @@
 <script>
-import { store } from "../store/store";
+import { store } from "../scripts/store";
 import Explorer from "../components/partials/Explorer.vue";
 
 export default {

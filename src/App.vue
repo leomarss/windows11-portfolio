@@ -1,5 +1,5 @@
 <script>
-import { store } from "./store/store";
+import { store } from "./scripts/store";
 
 import MenuBar from "./components/MenuBar.vue";
 import Desktop from "./components/Desktop.vue";
