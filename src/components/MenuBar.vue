@@ -1,33 +1,24 @@
 <script>
+import Datetime from "./partials/Datetime.vue";
+
 export default {
   data() {
     return {
-      currentTime: "",
-      currentDate: "",
-
       toggleLang: false,
     };
   },
+
+  components: {
+    Datetime,
+  },
+
   mounted() {
     if (localStorage.getItem("lang") !== null) {
       this.$i18n.locale = localStorage.getItem("lang");
     }
-    this.updateDateTime();
-    setInterval(this.updateDateTime, 1000);
   },
+
   methods: {
-    updateDateTime() {
-      const currentDate = new Date();
-      const hours = String(currentDate.getHours()).padStart(2, "0");
-      const minutes = String(currentDate.getMinutes()).padStart(2, "0");
-      const day = String(currentDate.getDate()).padStart(2, "0");
-      const month = String(currentDate.getMonth() + 1).padStart(2, "0");
-      const year = String(currentDate.getFullYear());
-
-      this.currentTime = `${hours}:${minutes}`;
-      this.currentDate = `${day}/${month}/${year}`;
-    },
-
     changeLanguage(lang) {
       this.$i18n.locale = lang;
       localStorage.setItem("lang", lang);
@@ -82,8 +73,8 @@ export default {
           </svg>
         </button>
         <button class="date selected-item h-full flex flex-col justify-center text-right">
-          <p class="w-full">{{ currentTime }}</p>
-          <p class="w-full">{{ currentDate }}</p>
+          <p class="w-full"><Datetime onlyTime /></p>
+          <p class="w-full"><Datetime onlyDate /></p>
         </button>
       </div>
     </div>

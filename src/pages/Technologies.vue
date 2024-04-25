@@ -2,6 +2,7 @@
 import { store } from "../store/store";
 import { i18n } from "../main";
 import Explorer from "../components/partials/Explorer.vue";
+import Datetime from "../components/partials/Datetime.vue";
 
 export default {
   data() {
@@ -10,44 +11,27 @@ export default {
 
       currentDatetime: "",
       technologies: [],
-      explorerName: this.$t("desktop[2].name"),
+      explorerName: this.$t("desktop.technologies.name"),
     };
   },
 
   components: {
     Explorer,
+    Datetime,
   },
 
   mounted() {
     this.updateTechnologies();
-    this.formattedDateTime();
-    setInterval(this.formattedDateTime, 1000);
   },
 
   watch: {
     "$i18n.locale"(newLocale) {
       this.updateTechnologies();
-      this.explorerName = this.$t("desktop[2].name");
+      this.explorerName = this.$t("desktop.technologies.name");
     },
   },
 
   methods: {
-    formattedDateTime() {
-      const currentDate = new Date();
-      const day = currentDate.getDate();
-      const month = currentDate.getMonth() + 1;
-      const year = currentDate.getFullYear();
-      const hours = currentDate.getHours();
-      const minutes = currentDate.getMinutes();
-
-      // Aggiungi zeri iniziali se necessario
-      const formattedDay = day < 10 ? `0${day}` : day;
-      const formattedMonth = month < 10 ? `0${month}` : month;
-      const formattedHours = hours < 10 ? `0${hours}` : hours;
-      const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-
-      this.currentDatetime = `${formattedDay}/${formattedMonth}/${year} ${formattedHours}:${formattedMinutes}`;
-    },
     updateTechnologies() {
       this.technologies = i18n.global.tm("technologies");
     },
@@ -74,7 +58,7 @@ export default {
               <span>{{ technology.name }}</span>
             </div>
           </div>
-          <div class="cell table-cell">{{ currentDatetime }}</div>
+          <div class="cell table-cell"><Datetime /></div>
           <div class="cell hidden xs:table-cell">{{ technology.type }}</div>
           <div class="cell hidden xs:table-cell text-right">0 KB</div>
         </div>
