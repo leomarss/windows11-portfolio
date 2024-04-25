@@ -1,5 +1,5 @@
 <script>
-import { store } from "../store/store";
+import { store } from "../scripts/store";
 import { i18n } from "../main";
 
 export default {

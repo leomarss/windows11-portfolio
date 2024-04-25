@@ -1,8 +1,9 @@
 <script>
-import { store } from "./store/store";
+import { store } from "./scripts/store";
 
 import MenuBar from "./components/MenuBar.vue";
 import Desktop from "./components/Desktop.vue";
+import Bsod from "./pages/Bsod.vue";
 
 export default {
   data() {
@@ -15,20 +16,26 @@ export default {
         endX: NaN,
         endY: NaN,
       },
+
+      currentRoute: window.location.pathname,
+      screenWidth: window.innerWidth,
     };
   },
 
   components: {
     MenuBar,
     Desktop,
+    Bsod,
   },
 
   mounted() {
     window.addEventListener("mousemove", this.handleMouseMoveOutside);
+    window.addEventListener("resize", this.handleWindowResize);
   },
 
   beforeDestroy() {
     window.removeEventListener("mousemove", this.handleMouseMoveOutside);
+    window.removeEventListener("resize", this.handleWindowResize);
   },
 
   methods: {
@@ -97,6 +104,10 @@ export default {
     endDragging(event) {
       this.store.isDragging = false;
     },
+
+    handleWindowResize() {
+      this.screenWidth = window.innerWidth;
+    },
   },
 
   watch: {
@@ -130,7 +141,10 @@ export default {
 </script>
 
 <template>
-  <div @mousedown="startSelection" @mouseup="endSelection" @mousemove="updateSelection">
+  <div v-if="currentRoute == '/error' || screenWidth <= 580">
+    <Bsod />
+  </div>
+  <div v-else @mousedown="startSelection" @mouseup="endSelection" @mousemove="updateSelection">
     <!-- Mouse selector -->
     <div class="mouse-selection fixed" v-if="isSelecting" :style="selectionBoxStyle"></div>
 
@@ -140,9 +154,7 @@ export default {
       </transition>
     </router-view>
 
-    <!-- Desktop -->
     <Desktop />
-
     <MenuBar />
   </div>
 </template>
