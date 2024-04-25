@@ -44,10 +44,10 @@ export default {
       <router-link :to="{ name: 'about-me' }" class="recent-file-link flex">
         <div class="file-name-col flex w-1/3">
           <img class="file-type-icon" src="/images/desktop/notes.png" />
-          <span>{{ $t("desktop[0].name") }}</span>
+          <span>{{ $t("desktop.about-me.name") }}</span>
         </div>
         <div class="recent-file-path">
-          <span>{{ $t("explorer.this-pc") }}/Desktop/{{ $t("desktop[0].name") }}.txt</span>
+          <span>{{ $t("explorer.this-pc") }}/Desktop/{{ $t("desktop.about-me.name") }}.txt</span>
         </div>
       </router-link>
     </div>

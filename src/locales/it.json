@@ -120,16 +120,16 @@
       "href": "https://drive.google.com/file/d/1n4pFsMisrQxFfmU4kdg8gU0_YA4ncJAA/view?usp=sharing"
     }
   ],
-  "desktop": [
-    {
+  "desktop": {
+    "about-me": {
       "icon": "/images/desktop/notes.png",
       "name": "Chi sono",
       "type": "Documento di testo",
       "route": "about-me",
-      "dateModified": "04/05/2023 23:48",
+      "dateModified": "24/04/2024 23:17",
       "size": "0 KB"
     },
-    {
+    "projects": {
       "icon": "/images/desktop/folder.png",
       "name": "Progetti",
       "type": "Cartella",
@@ -137,7 +137,7 @@
       "dateModified": "04/05/2023 23:48",
       "size": "0 KB"
     },
-    {
+    "technologies": {
       "icon": "/images/desktop/folder.png",
       "name": "Tecnologie",
       "type": "Cartella",
@@ -145,7 +145,7 @@
       "dateModified": "04/05/2023 23:48",
       "size": "0 KB"
     },
-    {
+    "links": {
       "icon": "/images/desktop/links.png",
       "name": "Links",
       "type": "Cartella",
@@ -153,7 +153,7 @@
       "dateModified": "04/05/2023 23:48",
       "size": "0 KB"
     }
-  ],
+  },
 
   "table-heading": {
     "name": "Nome",
