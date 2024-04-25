@@ -14,6 +14,7 @@ import Pictures from "../pages/Pictures.vue";
 import Videos from "../pages/Videos.vue";
 import Music from "../pages/Music.vue";
 import Terminal from "../pages/Terminal.vue";
+import Bsod from "../pages/Bsod.vue";
 
 const username = "leo";
 
@@ -138,6 +139,16 @@ const router = createRouter({
       component: Terminal,
       meta: {
         title: username + " | Terminal",
+      },
+    },
+
+    // BSOD
+    {
+      path: "/error",
+      name: "Error",
+      component: Bsod,
+      meta: {
+        title: username + " | Error",
       },
     },
   ],
