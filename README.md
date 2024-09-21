@@ -4,9 +4,7 @@ Windows 11 personal portfolio built with Vue.js and Tailwind, deployed on Netlif
 
 ## Demo
 
-<!-- To add -->
-
-View the live demo here: [leonardo.is](https://www.leonardo.is/)
+Live demo here: [leonardo.codes](https://www.leonardo.codes/)
 
 ## Learn more
 
