@@ -2,56 +2,56 @@
   "projects": [
     {
       "name": "deliveboo-frontoffice",
-      "link": "https://github.com/LeonardoMartignoni/deliveboo-frontoffice",
+      "link": "https://github.com/leomarss/deliveboo-frontoffice",
       "dateModified": "29/05/2023 18:28",
       "type": "Scorciatoia",
       "size": "95,5 MB"
     },
     {
       "name": "deliveboo-backoffice",
-      "link": "https://github.com/LeonardoMartignoni/deliveboo-backoffice",
+      "link": "https://github.com/leomarss/deliveboo-backoffice",
       "dateModified": "29/05/2023 16:59",
       "type": "Scorciatoia",
       "size": "171,1 MB"
     },
     {
       "name": "ecommerce-product-page",
-      "link": "https://github.com/LeonardoMartignoni/ecommerce-product-page",
+      "link": "https://github.com/leomarss/ecommerce-product-page",
       "dateModified": "15/05/2023 22:28",
       "type": "Scorciatoia",
       "size": "61,8 MB"
     },
     {
       "name": "boolzapp",
-      "link": "https://github.com/LeonardoMartignoni/vue-boolzapp",
+      "link": "https://github.com/leomarss/vue-boolzapp",
       "dateModified": "17/02/2023 10:13",
       "type": "Scorciatoia",
       "size": "2,2 MB"
     },
     {
       "name": "spotify-web",
-      "link": "https://github.com/LeonardoMartignoni/html-css-spotifyweb",
+      "link": "https://github.com/leomarss/html-css-spotifyweb",
       "dateModified": "11/01/2023 13:10",
       "type": "Scorciatoia",
       "size": "16,8 MB"
     },
     {
       "name": "boolflix",
-      "link": "https://github.com/LeonardoMartignoni/vite-boolflix",
+      "link": "https://github.com/leomarss/vite-boolflix",
       "dateModified": "07/03/2023 08:50",
       "type": "Scorciatoia",
       "size": "89,6 MB"
     },
     {
       "name": "dropbox-replica",
-      "link": "https://github.com/LeonardoMartignoni/htmlcss-dropbox",
+      "link": "https://github.com/leomarss/htmlcss-dropbox",
       "dateModified": "15/12/2022 15:05",
       "type": "Scorciatoia",
       "size": "4,4 MB"
     },
     {
       "name": "discord-replica",
-      "link": "https://github.com/LeonardoMartignoni/htmlcss-discord",
+      "link": "https://github.com/leomarss/htmlcss-discord",
       "dateModified": "06/12/2022 17:49",
       "type": "Scorciatoia",
       "size": "3,8 MB"
@@ -105,7 +105,7 @@
       "name": "Github",
       "type": "Scorciatoia",
       "icon": "/images/links/github.png",
-      "href": "https://github.com/LeonardoMartignoni"
+      "href": "https://github.com/leomarss"
     },
     {
       "name": "Email",
@@ -195,7 +195,7 @@
   },
 
   "recycle-bin": "Cestino",
-  "about-me-message": "Ciao, mi chiamo Leonardo! 👋\n\nHo {age} anni e sono di Roma.\nDa anni sono appassionato al mondo della tecnologia e della programmazione.\nPuoi vedere tutti i miei link cliccando sulla cartella \"Links\"! 👀\n\nQuesta webapp è stata realizzata utilizzando Vue.js e altri framework :D\n\nCodice sorgente disponibile su: https://github.com/LeonardoMartignoni/windows11-portfolio",
+  "about-me-message": "Ciao, mi chiamo Leonardo! 👋\n\nHo {age} anni e sono di Roma.\nDa anni sono appassionato al mondo della tecnologia e della programmazione.\nPuoi vedere tutti i miei link cliccando sulla cartella \"Links\"! 👀\n\nQuesta webapp è stata realizzata utilizzando Vue.js e altri framework :D\n\nCodice sorgente disponibile su: https://github.com/leomarss/windows11-portfolio",
   "empty-folder": "Questa cartella è vuota.",
   "disk-free-space": "liberi su",
   "terminal": "Terminale"

@@ -2,56 +2,56 @@
   "projects": [
     {
       "name": "deliveboo-frontoffice",
-      "link": "https://github.com/LeonardoMartignoni/deliveboo-frontoffice",
+      "link": "https://github.com/leomarss/deliveboo-frontoffice",
       "dateModified": "29/05/2023 18:28",
       "type": "Shortcut",
       "size": "95,5 MB"
     },
     {
       "name": "deliveboo-backoffice",
-      "link": "https://github.com/LeonardoMartignoni/deliveboo-backoffice",
+      "link": "https://github.com/leomarss/deliveboo-backoffice",
       "dateModified": "29/05/2023 16:59",
       "type": "Shortcut",
       "size": "171,1 MB"
     },
     {
       "name": "ecommerce-product-page",
-      "link": "https://github.com/LeonardoMartignoni/ecommerce-product-page",
+      "link": "https://github.com/leomarss/ecommerce-product-page",
       "dateModified": "15/05/2023 22:28",
       "type": "Shortcut",
       "size": "61,8 MB"
     },
     {
       "name": "boolzapp",
-      "link": "https://github.com/LeonardoMartignoni/vue-boolzapp",
+      "link": "https://github.com/leomarss/vue-boolzapp",
       "dateModified": "17/02/2023 10:13",
       "type": "Shortcut",
       "size": "2,2 MB"
     },
     {
       "name": "spotify-web",
-      "link": "https://github.com/LeonardoMartignoni/html-css-spotifyweb",
+      "link": "https://github.com/leomarss/html-css-spotifyweb",
       "dateModified": "11/01/2023 13:10",
       "type": "Shortcut",
       "size": "16,8 MB"
     },
     {
       "name": "boolflix",
-      "link": "https://github.com/LeonardoMartignoni/vite-boolflix",
+      "link": "https://github.com/leomarss/vite-boolflix",
       "dateModified": "07/03/2023 08:50",
       "type": "Shortcut",
       "size": "89,6 MB"
     },
     {
       "name": "dropbox-replica",
-      "link": "https://github.com/LeonardoMartignoni/htmlcss-dropbox",
+      "link": "https://github.com/leomarss/htmlcss-dropbox",
       "dateModified": "15/12/2022 15:05",
       "type": "Shortcut",
       "size": "4,4 MB"
     },
     {
       "name": "discord-replica",
-      "link": "https://github.com/LeonardoMartignoni/htmlcss-discord",
+      "link": "https://github.com/leomarss/htmlcss-discord",
       "dateModified": "06/12/2022 17:49",
       "type": "Shortcut",
       "size": "3,8 MB"
@@ -105,7 +105,7 @@
       "name": "Github",
       "type": "Shortcut",
       "icon": "/images/links/github.png",
-      "href": "https://github.com/LeonardoMartignoni"
+      "href": "https://github.com/leomarss"
     },
     {
       "name": "Email",
@@ -195,7 +195,7 @@
   },
 
   "recycle-bin": "Recycle Bin",
-  "about-me-message": "Hello, my name is Leonardo! 👋\n\nI'm 20 years old and I'm from Rome, Italy.\nI have been passionate about the world of technology and programming for years.\nFeel free to check out all my links by clicking the \"Links\" folder! 👀\n\nThis website was created using Vue.js and other frameworks :D\n\nSource code available: https://github.com/LeonardoMartignoni/windows11-portfolio",
+  "about-me-message": "Hello, my name is Leonardo! 👋\n\nI'm 20 years old and I'm from Rome, Italy.\nI have been passionate about the world of technology and programming for years.\nFeel free to check out all my links by clicking the \"Links\" folder! 👀\n\nThis website was created using Vue.js and other frameworks :D\n\nSource code available: https://github.com/leomarss/windows11-portfolio",
   "empty-folder": "This folder is empty.",
   "disk-free-space": "free of",
   "terminal": "Terminal"

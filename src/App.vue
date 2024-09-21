@@ -4,11 +4,13 @@ import { store } from "./scripts/store";
 import MenuBar from "./components/MenuBar.vue";
 import Desktop from "./components/Desktop.vue";
 import Bsod from "./pages/Bsod.vue";
+import { router } from "./router/router";
 
 export default {
   data() {
     return {
       store,
+      routeExists: true,
       isSelecting: false,
       selectionBox: {
         startX: NaN,
@@ -29,6 +31,17 @@ export default {
   },
 
   mounted() {
+    console.log(window.location.pathname);
+    router.getRoutes().map((route) => {
+      console.log(route.path);
+      if (window.location.pathname != route.path) {
+        this.routeExists = false;
+        console.log("path does not exist");
+      } else {
+        console.log("path exist");
+      }
+    });
+    console.log(this.routeExists);
     window.addEventListener("mousemove", this.handleMouseMoveOutside);
     window.addEventListener("resize", this.handleWindowResize);
   },

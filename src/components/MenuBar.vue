@@ -39,7 +39,7 @@ export default {
         <router-link :to="{ name: 'quick-access' }" class="selected-item">
           <img class="w-full h-full" src="/images/menu-bar/explorer.png" />
         </router-link>
-        <a href="https://vscode.dev/github/LeonardoMartignoni/windows11-portfolio" target="_blank" class="selected-item">
+        <a href="https://vscode.dev/github/leomarss/windows11-portfolio" target="_blank" class="selected-item">
           <img class="w-full h-full" src="/images/menu-bar/vscode.png" />
         </a>
         <router-link :to="{ name: 'terminal' }" class="selected-item">
