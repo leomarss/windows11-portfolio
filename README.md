@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/WliUpFA.jpg">
 
-Windows 11 personal portfolio built with Vue.js and Tailwind, deployed on Netlify.
+Windows 11 personal portfolio built with Vue.js and Tailwind, deployed on Vercel.
 
 ## Demo
 
