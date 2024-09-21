@@ -144,7 +144,7 @@ const router = createRouter({
 
     // BSOD
     {
-      path: "/error",
+      path: "/:notFound",
       name: "Error",
       component: Bsod,
       meta: {

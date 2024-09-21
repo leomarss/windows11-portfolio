@@ -1,11 +1,14 @@
+let storedProjectContentX = localStorage.getItem("storedProjectContentX");
+let storedProjectContentY = localStorage.getItem("storedProjectContentY");
+
 export const draggingVariables = {
   isMouseDown: false,
   initialMouseX: 0,
   initialMouseY: 0,
   initialProjectContentX: 0,
   initialProjectContentY: 0,
-  projectContentX: 0,
-  projectContentY: 0,
+  projectContentX: storedProjectContentX ? storedProjectContentX : 0,
+  projectContentY: storedProjectContentY ? storedProjectContentY : 0,
 };
 
 export const handleMouseDown = function (event) {
@@ -25,6 +28,8 @@ export const handleMouseMove = function (event) {
     const deltaY = event.clientY - this.initialMouseY;
     this.projectContentX = this.initialProjectContentX + deltaX;
     this.projectContentY = this.initialProjectContentY + deltaY;
+    localStorage.setItem("storedProjectContentX", projectContentX);
+    localStorage.setItem("storedProjectContentY", projectContentY);
   }
 };
 
