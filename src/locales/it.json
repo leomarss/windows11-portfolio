@@ -16,6 +16,11 @@
       "type": "Scorciatoia"
     },
     {
+      "name": "Python",
+      "icon": "/images/technologies/python.png",
+      "type": "Scorciatoia"
+    },
+    {
       "name": "PHP",
       "icon": "/images/technologies/php.png",
       "type": "Scorciatoia"

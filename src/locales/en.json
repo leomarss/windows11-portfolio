@@ -16,6 +16,11 @@
       "type": "Shortcut"
     },
     {
+      "name": "Python",
+      "icon": "/images/technologies/python.png",
+      "type": "Shortcut"
+    },
+    {
       "name": "PHP",
       "icon": "/images/technologies/php.png",
       "type": "Shortcut"
