@@ -38,12 +38,16 @@ export default {
           },
         });
 
-        this.projects = response.data.map((repo) => ({
-          name: repo.name,
-          link: repo.html_url,
-          dateModified: moment(repo.updated_at).format("DD/MM/YYYY HH:mm"),
-          size: this.convertSize(repo.size),
-        }));
+        const exclude = ["leomarss"];
+        this.projects = response.data
+          .filter((repo) => !exclude.includes(repo.name))
+          .map((repo) => ({
+            name: repo.name,
+            link: repo.html_url,
+            dateModified: moment(repo.updated_at).format("DD/MM/YYYY HH:mm"),
+            type: "Shortcut",
+            size: this.convertSize(repo.size),
+          }));
       } catch (error) {
         console.error("error in getting github projects:", error);
       }
