@@ -45,7 +45,6 @@ export default {
             name: repo.name,
             link: repo.html_url,
             dateModified: moment(repo.updated_at).format("DD/MM/YYYY HH:mm"),
-            type: "Shortcut",
             size: this.convertSize(repo.size),
           }));
       } catch (error) {
