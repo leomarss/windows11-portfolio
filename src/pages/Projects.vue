@@ -1,6 +1,7 @@
 <script>
 import { store } from "../scripts/store";
-import { i18n } from "../main";
+import axios from "axios";
+import moment from "moment";
 import Explorer from "../components/partials/Explorer.vue";
 
 export default {
@@ -23,14 +24,35 @@ export default {
 
   watch: {
     "$i18n.locale"(newLocale) {
-      this.updateProjects();
       this.explorerName = this.$t("desktop.projects.name");
     },
   },
 
   methods: {
-    updateProjects() {
-      this.projects = i18n.global.tm("projects");
+    async updateProjects() {
+      try {
+        const response = await axios.get("https://api.github.com/users/leomarss/repos", {
+          params: {
+            sort: "updated",
+            per_page: 10,
+          },
+        });
+
+        this.projects = response.data.map((repo) => ({
+          name: repo.name,
+          link: repo.html_url,
+          dateModified: moment(repo.updated_at).format("DD/MM/YYYY HH:mm"),
+          size: this.convertSize(repo.size),
+        }));
+      } catch (error) {
+        console.error("error in getting github projects:", error);
+      }
+    },
+
+    convertSize(kb) {
+      if (kb === 0) return "0 KB";
+      const mb = kb / 1024;
+      return mb >= 1 ? `${mb.toFixed(1).replace(".", ",")} MB` : `${kb.toFixed(1).replace(".", ",")} KB`;
     },
   },
 };
@@ -56,7 +78,7 @@ export default {
             </div>
           </div>
           <div class="cell table-cell">{{ project.dateModified }}</div>
-          <div class="cell hidden xs:table-cell">{{ project.type }}</div>
+          <div class="cell hidden xs:table-cell">{{ this.$i18n.locale == "it" ? "Scorciatoia" : "Shortcut" }}</div>
           <div class="cell hidden xs:table-cell text-right">{{ project.size }}</div>
         </a>
       </div>
